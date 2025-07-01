@@ -348,7 +348,6 @@ export default function InvestorReadyPitch() {
     touchEndX.current = null;
   };
 
-  // UPDATED Revenue Visual - More engaging and non-repetitive
   const RevenueVisual = () => {
     const revenueData = slides.find((s) => s.id === "revenue");
     if (!revenueData) return null;
@@ -362,7 +361,7 @@ export default function InvestorReadyPitch() {
 
     return (
       <div className="relative flex items-center justify-center w-full h-full">
-        <div className="w-full max-w-lg relative ">
+        <div className="w-full max-w-lg aspect-square relative">
           <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
             {/* Visual Header */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#6B7554]/30 via-[#6B7554]/60 to-[#6B7554]/30"></div>
@@ -511,15 +510,12 @@ export default function InvestorReadyPitch() {
   // Visual components for slides - UPDATED SLIDE 2 (Problem) - Reduced card size
   const ProblemVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md relative">
-        {" "}
-        {/* Removed aspect-square to allow auto-height */}
-        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-visible">
-          {" "}
-          {/* Changed to overflow-visible */}
+      <div className="w-full max-w-md aspect-square relative">
+        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">TRADITIONAL REAL ESTATE</span>
           </div>
+
           <div className="mt-6">
             <div className="text-lg font-bold mb-3 text-[#6B7554]">
               Market Access
@@ -579,15 +575,12 @@ export default function InvestorReadyPitch() {
   // UPDATED SLIDE 3 (Solution) - Reduced card size
   const SolutionVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md relative">
-        {" "}
-        {/* Removed aspect-square to allow auto-height */}
-        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-visible">
-          {" "}
-          {/* Changed to overflow-visible */}
+      <div className="w-full max-w-md aspect-square relative">
+        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">REGEN COLLECTIVE</span>
           </div>
+
           <div className="mt-6">
             <div className="text-lg font-bold mb-3 text-[#6B7554]">
               Market Access
@@ -704,7 +697,7 @@ export default function InvestorReadyPitch() {
   // UPDATED Market Visual - Moved card downward for better spacing
   const MarketVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full pt-6">
-      <div className="w-full max-w-md relative">
+      <div className="w-full max-w-md aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-3 text-[#6B7554]">
             Our Market Opportunity
@@ -757,10 +750,10 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // COMPLETELY REDESIGNED Roadmap Visual with timeline, icons, and visual elements
+  // UPDATED Roadmap Visual - Redesigned with more modern cards and step indicators
   const RoadmapVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-lg relative">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-5 text-[#6B7554]">
             Growth Trajectory
@@ -836,7 +829,7 @@ export default function InvestorReadyPitch() {
   // UPDATED Investment Visual - Fixed chart rendering
   const InvestmentVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md relative">
+      <div className="w-full max-w-md aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs font-bold rounded-md">
             SEED ROUND
@@ -905,7 +898,7 @@ export default function InvestorReadyPitch() {
 
   const TractionVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-lg relative">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-4 text-[#6B7554]">
             Milestones Achieved
@@ -1061,7 +1054,7 @@ export default function InvestorReadyPitch() {
 
     return (
       <div className="relative flex items-center justify-center w-full h-full">
-        <div className="w-full max-w-lg relative">
+        <div className="w-full max-w-lg aspect-square relative">
           <div className="bg-white rounded-xl shadow-lg p-4 relative">
             <div className="text-lg font-bold mb-4 text-[#6B7554]">
               Team & Advisors
@@ -1152,7 +1145,7 @@ export default function InvestorReadyPitch() {
 
   const CTAVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-lg relative">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 h-full flex flex-col items-center justify-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#6B7554] flex items-center justify-center mb-4">
             <div className="text-2xl font-bold text-white">R</div>
@@ -1357,7 +1350,7 @@ export default function InvestorReadyPitch() {
                 : "opacity-0 translate-y-12 z-10 pointer-events-none"
             }`}
           >
-            {/* Left side content - only this part scrolls if needed */}
+            {/* Left side content */}
             <div className="w-full md:w-1/2 max-w-xl md:pr-6 mb-6 md:mb-0 overflow-y-auto max-h-[calc(100vh-8rem)] scrollbar-hide">
               <div className="max-w-lg mx-auto md:mx-0">
                 {/* Slide title */}
@@ -1467,6 +1460,25 @@ export default function InvestorReadyPitch() {
                   </ul>
                 )}
 
+                {/* Roadmap stages - Removed redundant rendering since we redesigned the visual */}
+
+                {/* Investment terms */}
+                {slide.terms && (
+                  <div className="space-y-3 mb-4">
+                    {slide.terms.map((term, i) => (
+                      <div
+                        key={i}
+                        className="bg-white rounded-lg p-3 shadow-sm"
+                      >
+                        <div className="text-xs text-[#6B7554]/70 mb-1">
+                          {term.label}
+                        </div>
+                        <div className="text-sm font-bold">{term.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
                 {/* Revenue Items */}
                 {slide.revenueItems && (
                   <div className="grid grid-cols-1 gap-3 mb-4">
@@ -1516,7 +1528,7 @@ export default function InvestorReadyPitch() {
               </div>
             </div>
 
-            {/* Right side visual - non-scrollable with fixed height */}
+            {/* Right side visual */}
             <div className="w-full md:w-1/2 flex items-center justify-center">
               {renderVisual(slide.visual)}
             </div>
