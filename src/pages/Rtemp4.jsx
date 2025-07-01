@@ -13,6 +13,8 @@ export default function InvestorReadyPitch() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [deviceType, setDeviceType] = useState("desktop"); // desktop, tablet, mobile
   const slideRefs = useRef([]);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
@@ -109,6 +111,7 @@ export default function InvestorReadyPitch() {
         { label: "London Commercial Market Size", value: "$20B" },
         { label: "1st CoLiving Fund Target Size ", value: "$50M" },
       ],
+
       visual: "MarketVisual",
     },
     {
@@ -267,7 +270,7 @@ export default function InvestorReadyPitch() {
     }
   };
 
-  // Handle slide navigation
+  // Handle slide navigation - memoized to fix keyboard navigation
   const handleNextSlide = useCallback(() => {
     if (!isAnimating && currentSlide < slides.length - 1) {
       setIsAnimating(true);
@@ -297,13 +300,18 @@ export default function InvestorReadyPitch() {
 
   // Initialize
   useEffect(() => {
+    // Set initial load state
     setTimeout(() => {
       setIsLoaded(true);
     }, 800);
+
+    // Set initial dimensions
+    updateDimensions();
   }, []);
 
-  // Set up keyboard navigation
+  // Set up keyboard navigation and resize listener
   useEffect(() => {
+    // Add keyboard navigation
     const handleKeyDown = (e) => {
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         handleNextSlide();
@@ -312,8 +320,18 @@ export default function InvestorReadyPitch() {
       }
     };
 
+    // Add resize listener
+    const handleResize = () => {
+      updateDimensions();
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [handleNextSlide, handlePrevSlide]);
 
   // Touch event handlers for swipe navigation
@@ -343,11 +361,26 @@ export default function InvestorReadyPitch() {
     touchEndX.current = null;
   };
 
+  // Update dimensions and device type
+  const updateDimensions = () => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    setDimensions({ width, height });
+
+    if (width < 640) {
+      setDeviceType("mobile");
+    } else if (width < 1024) {
+      setDeviceType("tablet");
+    } else {
+      setDeviceType("desktop");
+    }
+  };
+
   const RevenueVisual = () => {
     const revenueData = slides.find((s) => s.id === "revenue");
     if (!revenueData) return null;
 
-    // Sample data for visualization
+    // Sample data for visualization (can be dynamic based on actual data)
     const revenueMetrics = [
       { label: "Recurring", value: 65 },
       { label: "Transactional", value: 35 },
@@ -809,6 +842,8 @@ export default function InvestorReadyPitch() {
                 <svg
                   width="16"
                   height="16"
+                  sm:width="20"
+                  sm:height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -837,6 +872,8 @@ export default function InvestorReadyPitch() {
                 <svg
                   width="16"
                   height="16"
+                  sm:width="20"
+                  sm:height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -865,6 +902,8 @@ export default function InvestorReadyPitch() {
                 <svg
                   width="16"
                   height="16"
+                  sm:width="20"
+                  sm:height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -893,6 +932,8 @@ export default function InvestorReadyPitch() {
                 <svg
                   width="16"
                   height="16"
+                  sm:width="20"
+                  sm:height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -921,6 +962,8 @@ export default function InvestorReadyPitch() {
                 <svg
                   width="16"
                   height="16"
+                  sm:width="20"
+                  sm:height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1202,9 +1245,35 @@ export default function InvestorReadyPitch() {
             Financial Projections
           </div>
 
-          <FinancialChart
-            data={slides.find((s) => s.id === "investment").projections}
-          />
+          <div className="flex justify-between items-end h-24 sm:h-40 mb-2 sm:mb-4">
+            {slides
+              .find((s) => s.id === "investment")
+              .projections.map((proj, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="text-[10px] sm:text-xs mb-1 sm:mb-2 text-[#6B7554]/70">
+                    {proj.year}
+                  </div>
+                  <div
+                    className="w-10 sm:w-16 bg-[#6B7554] rounded-t-lg relative flex items-end justify-center"
+                    style={{
+                      height: `${
+                        (parseInt(proj.revenue.replace(/[^0-9.]/g, "")) / 65) *
+                        100
+                      }%`,
+                    }}
+                  >
+                    <div className="absolute -top-4 sm:-top-6 w-full text-center">
+                      <div className="text-xs sm:text-sm font-bold text-[#6B7554]">
+                        {proj.revenue}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="text-[10px] sm:text-xs mt-1 sm:mt-2 text-[#6B7554]/70">
+                    {proj.users} users
+                  </div>
+                </div>
+              ))}
+          </div>
 
           <div className="mt-2 bg-[#6B7554] text-white rounded-lg sm:rounded-xl p-2 sm:p-4 text-center">
             <div className="text-sm sm:text-base font-bold">
@@ -1281,6 +1350,7 @@ export default function InvestorReadyPitch() {
         return <CTAVisual />;
       case "RevenueVisual":
         return <RevenueVisual />;
+
       default:
         return null;
     }
@@ -1549,7 +1619,7 @@ export default function InvestorReadyPitch() {
                 )}
 
                 {/* Roadmap stages */}
-                {slide.stages && (
+                {slide.stages && deviceType === "mobile" && (
                   <div className="space-y-2 sm:space-y-4 mb-3 sm:mb-4 md:mb-6">
                     {slide.stages.map((stage, i) => (
                       <div
@@ -1579,7 +1649,7 @@ export default function InvestorReadyPitch() {
                 )}
 
                 {/* Investment terms */}
-                {slide.terms && (
+                {slide.terms && deviceType === "mobile" && (
                   <div className="space-y-2 sm:space-y-4 mb-3 sm:mb-4 md:mb-6">
                     {slide.terms.map((term, i) => (
                       <div
@@ -1625,7 +1695,7 @@ export default function InvestorReadyPitch() {
 
                 {/* CTA button */}
                 {slide.cta && (
-                  <div className="text-center md:text-left">
+                  <div className={deviceType === "mobile" ? "text-center" : ""}>
                     <button className="px-6 sm:px-8 py-2 sm:py-3 bg-[#6B7554] text-white rounded-lg font-bold text-sm sm:text-base md:text-lg shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A] hover:scale-105">
                       {slide.cta}
                     </button>
