@@ -7,9 +7,6 @@ import {
   FaExchangeAlt,
   FaBuilding,
   FaFileContract,
-  FaCalendar,
-  FaMapMarkerAlt,
-  FaChartBar,
 } from "react-icons/fa";
 
 export default function InvestorReadyPitch() {
@@ -462,15 +459,14 @@ export default function InvestorReadyPitch() {
     );
   };
 
-  // Financial Chart Component - Fixed to render properly
+  // Financial Chart Component
   const FinancialChart = ({ data }) => {
-    // Calculate max revenue for proper scaling
     const maxRevenue = Math.max(
       ...data.map((item) => parseFloat(item.revenue.replace(/[^0-9.]/g, "")))
     );
 
     return (
-      <div className="flex justify-between items-end h-32 mb-3">
+      <div className="flex justify-between items-end h-24 mb-2">
         {data.map((proj, index) => (
           <div
             key={index}
@@ -479,27 +475,26 @@ export default function InvestorReadyPitch() {
             <div className="text-xs mb-1 text-[#6B7554]/70 truncate w-full text-center">
               {proj.year}
             </div>
-            <div className="relative w-full flex items-end justify-center">
-              <div
-                className="w-12 bg-[#6B7554] rounded-t-lg transition-all duration-500 ease-out transform hover:scale-105"
-                style={{
-                  height: `${Math.max(
-                    20,
-                    (parseFloat(proj.revenue.replace(/[^0-9.]/g, "")) /
-                      maxRevenue) *
-                      100
-                  )}%`,
-                  minHeight: "40px",
-                }}
-              ></div>
+            <div
+              className="w-full bg-[#6B7554] rounded-t-lg relative flex items-end justify-center transition-all duration-500 ease-out transform hover:scale-105"
+              style={{
+                height: `${Math.max(
+                  20,
+                  (parseFloat(proj.revenue.replace(/[^0-9.]/g, "")) /
+                    maxRevenue) *
+                    100
+                )}%`,
+                minHeight: "20%",
+              }}
+            >
               <div className="absolute -top-6 w-full text-center">
                 <div className="text-xs font-bold text-[#6B7554] whitespace-nowrap">
                   {proj.revenue}
                 </div>
               </div>
             </div>
-            <div className="text-xs mt-2 text-[#6B7554]/70 truncate w-full text-center">
-              {proj.users}
+            <div className="text-xs mt-1 text-[#6B7554]/70 truncate w-full text-center">
+              {proj.users} users
             </div>
           </div>
         ))}
@@ -507,17 +502,42 @@ export default function InvestorReadyPitch() {
     );
   };
 
-  // Visual components for slides - UPDATED SLIDE 2 (Problem) - Reduced card size
+  // Visual components for slides
+  const IntroVisual = () => (
+    <div className="relative flex items-center justify-center w-full h-full">
+      <div className="w-full max-w-lg aspect-square relative">
+        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/10 animate-pulse-slow"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/20 scale-90 animate-pulse-slow-delay"></div>
+        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/30 scale-80 animate-pulse-fast"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <div className="text-5xl font-bold text-[#6B7554]">$12T</div>
+            <div className="text-lg mt-2">Market Opportunity</div>
+          </div>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
+            <span className="text-sm font-medium">$500K+ BARRIER TODAY</span>
+          </div>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
+            <span className="text-sm font-bold">$100 WITH REGEN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const ProblemVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md aspect-square relative">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">TRADITIONAL REAL ESTATE</span>
           </div>
 
-          <div className="mt-6">
-            <div className="text-lg font-bold mb-3 text-[#6B7554]">
+          <div className="mt-8">
+            <div className="text-xl font-bold mb-4 text-[#6B7554]">
               Market Access
             </div>
 
@@ -537,7 +557,7 @@ export default function InvestorReadyPitch() {
               <div>99.9% excluded</div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-4">
               <div className="flex justify-between items-center mb-1">
                 <div className="text-sm font-medium">Minimum Investment</div>
                 <div className="text-sm font-bold text-[#6B7554]">
@@ -572,17 +592,16 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // UPDATED SLIDE 3 (Solution) - Reduced card size
   const SolutionVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md aspect-square relative">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">REGEN COLLECTIVE</span>
           </div>
 
-          <div className="mt-6">
-            <div className="text-lg font-bold mb-3 text-[#6B7554]">
+          <div className="mt-8">
+            <div className="text-xl font-bold mb-4 text-[#6B7554]">
               Market Access
             </div>
 
@@ -600,7 +619,7 @@ export default function InvestorReadyPitch() {
               <div>0% excluded</div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-4">
               <div className="flex justify-between items-center mb-1">
                 <div className="text-sm font-medium">Minimum Investment</div>
                 <div className="text-sm font-bold text-[#6B7554]">$100</div>
@@ -633,14 +652,13 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // UPDATED SLIDE 4 (Product) - Reduced card size and improved layout
   const ProductVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md relative">
+      <div className="w-full max-w-lg relative">
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaExchangeAlt className="w-4 h-4" />
+            <div className="w-12 h-12 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
+              <FaExchangeAlt className="w-5 h-5" />
             </div>
             <div className="text-sm font-bold mb-1 text-[#6B7554]">
               Tokenization
@@ -651,8 +669,8 @@ export default function InvestorReadyPitch() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaBuilding className="w-4 h-4" />
+            <div className="w-12 h-12 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
+              <FaBuilding className="w-5 h-5" />
             </div>
             <div className="text-sm font-bold mb-1 text-[#6B7554]">
               Marketplace
@@ -663,8 +681,8 @@ export default function InvestorReadyPitch() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaFileContract className="w-4 h-4" />
+            <div className="w-12 h-12 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
+              <FaFileContract className="w-5 h-5" />
             </div>
             <div className="text-sm font-bold mb-1 text-[#6B7554]">
               Certificates
@@ -675,8 +693,8 @@ export default function InvestorReadyPitch() {
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaChartLine className="w-4 h-4" />
+            <div className="w-12 h-12 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
+              <FaChartLine className="w-5 h-5" />
             </div>
             <div className="text-sm font-bold mb-1 text-[#6B7554]">
               Analytics
@@ -694,10 +712,9 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // UPDATED Market Visual - Moved card downward for better spacing
   const MarketVisual = () => (
-    <div className="relative flex items-center justify-center w-full h-full pt-6">
-      <div className="w-full max-w-md aspect-square relative">
+    <div className="relative flex items-center justify-center w-full h-full">
+      <div className="w-full max-w-lg aspect-square relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-3 text-[#6B7554]">
             Our Market Opportunity
@@ -744,152 +761,6 @@ export default function InvestorReadyPitch() {
 
           <div className="mt-3 bg-[#6B7554] text-white rounded-lg p-3 text-center">
             <div className="text-sm font-bold">First-Mover Advantage</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  // UPDATED Roadmap Visual - Redesigned with more modern cards and step indicators
-  const RoadmapVisual = () => (
-    <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-lg aspect-square relative">
-        <div className="bg-white rounded-xl shadow-lg p-4 relative">
-          <div className="text-lg font-bold mb-5 text-[#6B7554]">
-            Growth Trajectory
-          </div>
-
-          <div className="relative">
-            {/* Timeline connector */}
-            <div className="absolute left-3 top-6 bottom-6 w-1 bg-gradient-to-b from-[#6B7554]/20 via-[#6B7554]/60 to-[#6B7554]/90"></div>
-
-            <div className="space-y-5">
-              {slides
-                .find((s) => s.id === "roadmap")
-                .stages.map((stage, i) => (
-                  <div key={i} className="flex">
-                    {/* Step indicator */}
-                    <div className="relative mr-4 flex-shrink-0">
-                      <div className="w-7 h-7 rounded-full bg-[#6B7554] text-white flex items-center justify-center shadow-md relative z-10">
-                        {i === 0 ? (
-                          <FaCalendar size={12} />
-                        ) : i === 1 ? (
-                          <FaChartBar size={12} />
-                        ) : (
-                          <FaMapMarkerAlt size={12} />
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Card content */}
-                    <div className="flex-1 bg-gradient-to-br from-white to-[#6B7554]/5 rounded-lg p-3 shadow-md border-l-4 border-[#6B7554] transform transition-all duration-300 hover:translate-x-1 hover:shadow-lg">
-                      <div className="flex justify-between items-start">
-                        <div className="text-xs px-2 py-0.5 bg-[#6B7554]/10 rounded-full text-[#6B7554]/80 mb-2">
-                          {stage.quarter}
-                        </div>
-                        <div className="text-xs font-semibold text-[#6B7554] px-2 py-0.5 bg-[#6B7554]/20 rounded-full">
-                          {i === 0
-                            ? "Phase 1"
-                            : i === 1
-                            ? "Phase 2"
-                            : "Phase 3"}
-                        </div>
-                      </div>
-
-                      <div className="font-bold text-sm mb-2 text-[#6B7554]">
-                        {stage.title}
-                      </div>
-
-                      <ul className="space-y-1.5">
-                        {stage.points.map((point, j) => (
-                          <li key={j} className="flex items-start text-xs">
-                            <div className="w-4 h-4 rounded-full bg-[#6B7554]/10 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
-                              <div className="w-1.5 h-1.5 rounded-full bg-[#6B7554]"></div>
-                            </div>
-                            <span className="text-[#6B7554]/90">{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-
-          <div className="mt-5 bg-[#6B7554] text-white rounded-lg p-3 text-center shadow-md">
-            <div className="text-sm font-bold">
-              $500M in Tokenized Assets by Q4 2026
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  // UPDATED Investment Visual - Fixed chart rendering
-  const InvestmentVisual = () => (
-    <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-md aspect-square relative">
-        <div className="bg-white rounded-xl shadow-lg p-4 relative">
-          <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs font-bold rounded-md">
-            SEED ROUND
-          </div>
-
-          <div className="text-lg font-bold mb-4 text-[#6B7554]">
-            Investment Terms
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {slides
-              .find((s) => s.id === "investment")
-              .terms.map((term, index) => (
-                <div key={index} className="bg-[#6B7554]/10 rounded-lg p-3">
-                  <div className="text-xs text-[#6B7554]/70 mb-1">
-                    {term.label}
-                  </div>
-                  <div className="text-sm font-bold">{term.value}</div>
-                </div>
-              ))}
-          </div>
-
-          <div className="mt-4 text-lg font-bold mb-2 text-[#6B7554]">
-            Financial Projections
-          </div>
-
-          {/* Fixed Financial Chart Component */}
-          <FinancialChart
-            data={slides.find((s) => s.id === "investment").projections}
-          />
-
-          <div className="mt-2 bg-[#6B7554] text-white rounded-lg p-3 text-center">
-            <div className="text-sm font-bold">
-              Limited Allocation Available
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
-  const IntroVisual = () => (
-    <div className="relative flex items-center justify-center w-full h-full">
-      <div className="w-full max-w-lg aspect-square relative">
-        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/10 animate-pulse-slow"></div>
-        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/20 scale-90 animate-pulse-slow-delay"></div>
-        <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/30 scale-80 animate-pulse-fast"></div>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-5xl font-bold text-[#6B7554]">$12T</div>
-            <div className="text-lg mt-2">Market Opportunity</div>
-          </div>
-        </div>
-
-        <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
-            <span className="text-sm font-medium">$500K+ BARRIER TODAY</span>
-          </div>
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
-            <span className="text-sm font-bold">$100 WITH REGEN</span>
           </div>
         </div>
       </div>
@@ -1048,6 +919,108 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
+  const RoadmapVisual = () => (
+    <div className="relative flex items-center justify-center w-full h-full">
+      <div className="w-full max-w-lg aspect-square relative">
+        <div className="bg-white rounded-xl shadow-lg p-4 relative">
+          <div className="text-lg font-bold mb-4 text-[#6B7554]">
+            Growth Trajectory
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-[#6B7554]/10 rounded-lg p-3">
+              <div className="text-xs text-[#6B7554]/70">Q3 2025</div>
+              <div className="font-bold text-sm mb-1 text-[#6B7554]">
+                LAUNCH
+              </div>
+              <ul className="text-xs space-y-1">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>First 3 properties tokenized</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>Platform launch</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>25,000 initial users</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-[#6B7554]/10 rounded-lg p-3">
+              <div className="text-xs text-[#6B7554]/70">Q4 2025</div>
+              <div className="font-bold text-sm mb-1 text-[#6B7554]">
+                EXPAND
+              </div>
+              <ul className="text-xs space-y-1">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>10+ more properties</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>Secondary market launch</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>Mobile app release</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-[#6B7554]/10 rounded-lg p-3">
+              <div className="text-xs text-[#6B7554]/70">Q1 2026</div>
+              <div className="font-bold text-sm mb-1 text-[#6B7554]">GROW</div>
+              <ul className="text-xs space-y-1">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>International expansion</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>AI analytics suite</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>50,000+ investors</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-[#6B7554]/10 rounded-lg p-3">
+              <div className="text-xs text-[#6B7554]/70">Q2 2026</div>
+              <div className="font-bold text-sm mb-1 text-[#6B7554]">
+                DOMINATE
+              </div>
+              <ul className="text-xs space-y-1">
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>50+ premium properties</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>100,000+ active users</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-2"></div>
+                  <span>Institutional partnerships</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-4 bg-[#6B7554] text-white rounded-lg p-3 text-center">
+            <div className="text-sm font-bold">
+              $500M in Tokenized Assets by Q4 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const TeamAndAdvisorsVisual = () => {
     const slide = slides.find((s) => s.id === "team");
     if (!slide) return null;
@@ -1142,6 +1115,49 @@ export default function InvestorReadyPitch() {
       </div>
     );
   };
+
+  const InvestmentVisual = () => (
+    <div className="relative flex items-center justify-center w-full h-full">
+      <div className="w-full max-w-lg aspect-square relative">
+        <div className="bg-white rounded-xl shadow-lg p-4 relative">
+          <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs font-bold rounded-md">
+            SEED ROUND
+          </div>
+
+          <div className="text-lg font-bold mb-4 text-[#6B7554]">
+            Investment Terms
+          </div>
+
+          <div className="grid grid-cols-2 gap-3">
+            {slides
+              .find((s) => s.id === "investment")
+              .terms.map((term, index) => (
+                <div key={index} className="bg-[#6B7554]/10 rounded-lg p-3">
+                  <div className="text-xs text-[#6B7554]/70 mb-1">
+                    {term.label}
+                  </div>
+                  <div className="text-sm font-bold">{term.value}</div>
+                </div>
+              ))}
+          </div>
+
+          <div className="mt-4 text-lg font-bold mb-2 text-[#6B7554]">
+            Financial Projections
+          </div>
+
+          <FinancialChart
+            data={slides.find((s) => s.id === "investment").projections}
+          />
+
+          <div className="mt-2 bg-[#6B7554] text-white rounded-lg p-3 text-center">
+            <div className="text-sm font-bold">
+              Limited Allocation Available
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   const CTAVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
@@ -1460,7 +1476,32 @@ export default function InvestorReadyPitch() {
                   </ul>
                 )}
 
-                {/* Roadmap stages - Removed redundant rendering since we redesigned the visual */}
+                {/* Roadmap stages */}
+                {slide.stages && (
+                  <div className="space-y-3 mb-4">
+                    {slide.stages.map((stage, i) => (
+                      <div
+                        key={i}
+                        className="bg-white rounded-lg p-3 shadow-sm"
+                      >
+                        <div className="text-xs text-[#6B7554]/70 mb-1">
+                          {stage.quarter}
+                        </div>
+                        <div className="text-sm font-bold mb-1">
+                          {stage.title}
+                        </div>
+                        <ul className="space-y-1">
+                          {stage.points.map((point, j) => (
+                            <li key={j} className="text-xs flex items-start">
+                              <div className="w-1 h-1 rounded-full bg-[#6B7554] mt-1.5 mr-1 flex-shrink-0"></div>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Investment terms */}
                 {slide.terms && (
