@@ -200,9 +200,9 @@ export default function InvestorReadyPitch() {
           icon: "QK",
         },
         {
-          name: "Cosmic Caz",
+          name: "Caz Rue",
           title: "CFO",
-          icon: "CC",
+          icon: "CR",
         },
       ],
       advisors: [
@@ -235,30 +235,32 @@ export default function InvestorReadyPitch() {
       subtitle: "Seed Round - $5M",
       terms: [
         { label: "Valuation", value: "$5M" },
-        { label: "Minimum Investment", value: "$250K" },
-        { label: "Structure", value: "1% pre-seed 20% discount" },
+        { label: "Minimum Investment", value: "$40K" },
+        {
+          label: "Structure",
+          value: "1% pre-seed, 20% discount on next round",
+        },
         {
           label: "Use of Funds",
           value:
-            "Platform completion, Launch retail investor marketing, regulatory approvals",
+            "Platform completion, retail investor marketing, regulatory approvals, property onboarding",
         },
       ],
       projections: [
-        { year: "Year 1", revenue: "$4.5M", users: "50K" },
-        { year: "Year 2", revenue: "$18M", users: "200K" },
-        { year: "Year 3", revenue: "$65M", users: "500K" },
+        { year: "Year 1", revenue: "$1.75M", users: "100 tenants" },
+        { year: "Year 2", revenue: "$5M", users: "200 tenants" },
+        { year: "Year 3", revenue: "$15M", users: "600 tenants" },
       ],
-      note: "Limited allocation available. Term sheet upon request.",
+      note: "Revenue projections based on 1-3% fee model across onboarded properties. Limited allocation available. Term sheet available on request.",
       visual: "InvestmentVisual",
     },
+
     {
       id: "cta",
       title: "JOIN THE REVOLUTION",
-      subtitle: "Limited Investment Opportunity",
+      subtitle: "Exclusive Early-Stage Access",
       content:
-        "Be part of the platform that democratizes the $12 trillion commercial real estate market.",
-      cta: "INVEST NOW",
-      contact: "invest@regencollective.xyz",
+        "Step into the future of real estate investing. Gain early access to a platform reshaping the $12T commercial property market — transparent, fractional, and built for the next generation of investors.",
       visual: "CTAVisual",
     },
   ];
@@ -477,9 +479,6 @@ export default function InvestorReadyPitch() {
             key={index}
             className="flex flex-col items-center flex-1 min-w-0"
           >
-            <div className="text-xs mb-1 text-[#6B7554]/70 truncate w-full text-center">
-              {proj.year}
-            </div>
             <div className="relative w-full flex items-end justify-center">
               <div
                 className="w-12 bg-[#6B7554] rounded-t-lg transition-all duration-500 ease-out transform hover:scale-105"
@@ -508,25 +507,21 @@ export default function InvestorReadyPitch() {
     );
   };
 
-  // Visual components for slides - UPDATED SLIDE 2 (Problem) - Reduced card size
+  // UPDATED SLIDE 2 (Problem)
   const ProblemVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-md relative">
-        {" "}
-        {/* Removed aspect-square to allow auto-height */}
-        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-visible">
-          {" "}
-          {/* Changed to overflow-visible */}
+        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden max-h-full md:max-h-none">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">TRADITIONAL REAL ESTATE</span>
           </div>
-          <div className="mt-6">
-            <div className="text-lg font-bold mb-3 text-[#6B7554]">
+          <div className="mt-4">
+            <div className="text-lg font-bold mb-2 text-[#6B7554]">
               Market Access
             </div>
 
             <div className="grid grid-cols-10 gap-1">
-              {Array.from({ length: 100 }).map((_, i) => (
+              {Array.from({ length: 50 }).map((_, i) => (
                 <div
                   key={i}
                   className={`aspect-square rounded-md ${
@@ -541,9 +536,9 @@ export default function InvestorReadyPitch() {
               <div>99.9% excluded</div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-2">
               <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Minimum Investment</div>
+                <div className="text-sm font-medium">Min Investment</div>
                 <div className="text-sm font-bold text-[#6B7554]">
                   $500,000+
                 </div>
@@ -555,46 +550,27 @@ export default function InvestorReadyPitch() {
                 ></div>
               </div>
             </div>
-
-            <div className="mt-3">
-              <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Liquidity Period</div>
-                <div className="text-sm font-bold text-[#6B7554]">
-                  18-36 Months
-                </div>
-              </div>
-              <div className="h-2 w-full bg-[#6B7554]/10 rounded-full">
-                <div
-                  className="h-full bg-[#6B7554] rounded-full"
-                  style={{ width: "85%" }}
-                ></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
 
-  // UPDATED SLIDE 3 (Solution) - Reduced card size
+  // UPDATED SLIDE 3 (Solution)
   const SolutionVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-md relative">
-        {" "}
-        {/* Removed aspect-square to allow auto-height */}
-        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-visible">
-          {" "}
-          {/* Changed to overflow-visible */}
+        <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden max-h-full md:max-h-none">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
             <span className="text-xs">REGEN COLLECTIVE</span>
           </div>
-          <div className="mt-6">
-            <div className="text-lg font-bold mb-3 text-[#6B7554]">
+          <div className="mt-4">
+            <div className="text-lg font-bold mb-2 text-[#6B7554]">
               Market Access
             </div>
 
             <div className="grid grid-cols-10 gap-1">
-              {Array.from({ length: 100 }).map((_, i) => (
+              {Array.from({ length: 50 }).map((_, i) => (
                 <div
                   key={i}
                   className="aspect-square rounded-md bg-[#6B7554]"
@@ -607,9 +583,9 @@ export default function InvestorReadyPitch() {
               <div>0% excluded</div>
             </div>
 
-            <div className="mt-3">
+            <div className="mt-2">
               <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Minimum Investment</div>
+                <div className="text-sm font-medium">Min Investment</div>
                 <div className="text-sm font-bold text-[#6B7554]">$100</div>
               </div>
               <div className="h-2 w-full bg-[#6B7554]/10 rounded-full">
@@ -619,89 +595,54 @@ export default function InvestorReadyPitch() {
                 ></div>
               </div>
             </div>
-
-            <div className="mt-3">
-              <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Liquidity Period</div>
-                <div className="text-sm font-bold text-[#6B7554]">
-                  Instant 24/7
-                </div>
-              </div>
-              <div className="h-2 w-full bg-[#6B7554]/10 rounded-full">
-                <div
-                  className="h-full bg-[#6B7554] rounded-full"
-                  style={{ width: "5%" }}
-                ></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   );
 
-  // UPDATED SLIDE 4 (Product) - Reduced card size and improved layout
+  // UPDATED SLIDE 4 (Product) - Simplified for mobile with a more compact layout
   const ProductVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-md relative">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaExchangeAlt className="w-4 h-4" />
+        <div className="grid grid-cols-2 gap-2">
+          <div className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center">
+            <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
+              <FaExchangeAlt className="w-3 h-3" />
             </div>
-            <div className="text-sm font-bold mb-1 text-[#6B7554]">
-              Tokenization
-            </div>
-            <div className="text-xs text-[#6B7554]/70">
-              Convert premium properties into accessible tokens
-            </div>
+            <div className="text-xs font-bold text-[#6B7554]">Tokenization</div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaBuilding className="w-4 h-4" />
+          <div className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center">
+            <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
+              <FaBuilding className="w-3 h-3" />
             </div>
-            <div className="text-sm font-bold mb-1 text-[#6B7554]">
-              Marketplace
-            </div>
-            <div className="text-xs text-[#6B7554]/70">
-              Buy and sell tokens with zero friction
-            </div>
+            <div className="text-xs font-bold text-[#6B7554]">Marketplace</div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaFileContract className="w-4 h-4" />
+          <div className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center">
+            <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
+              <FaFileContract className="w-3 h-3" />
             </div>
-            <div className="text-sm font-bold mb-1 text-[#6B7554]">
-              Certificates
-            </div>
-            <div className="text-xs text-[#6B7554]/70">
-              Verifiable SPV ownership
-            </div>
+            <div className="text-xs font-bold text-[#6B7554]">Certificates</div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-3 aspect-square flex flex-col items-center justify-center text-center">
-            <div className="w-10 h-10 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-2">
-              <FaChartLine className="w-4 h-4" />
+          <div className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center">
+            <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
+              <FaChartLine className="w-3 h-3" />
             </div>
-            <div className="text-sm font-bold mb-1 text-[#6B7554]">
-              Analytics
-            </div>
-            <div className="text-xs text-[#6B7554]/70">
-              AI-powered investment insights
-            </div>
+            <div className="text-xs font-bold text-[#6B7554]">Analytics</div>
           </div>
         </div>
 
-        <div className="mt-3 bg-[#6B7554] text-white rounded-lg p-3 text-center">
-          <div className="text-sm font-bold">Complete End-to-End Platform</div>
+        <div className="mt-2 bg-[#6B7554] text-white rounded-lg p-2 text-center">
+          <div className="text-xs font-bold">Complete Platform</div>
         </div>
       </div>
     </div>
   );
 
-  // UPDATED Market Visual - Moved card downward for better spacing
+  // Market Visual - Unchanged
   const MarketVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full pt-6">
       <div className="w-full max-w-md relative">
@@ -757,7 +698,7 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // COMPLETELY REDESIGNED Roadmap Visual with timeline, icons, and visual elements
+  // Roadmap Visual - Unchanged
   const RoadmapVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-lg relative">
@@ -833,7 +774,7 @@ export default function InvestorReadyPitch() {
     </div>
   );
 
-  // UPDATED Investment Visual - Fixed chart rendering
+  // Investment Visual - Unchanged
   const InvestmentVisual = () => (
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-md relative">
@@ -1179,12 +1120,6 @@ export default function InvestorReadyPitch() {
           <div className="mt-4 text-sm text-[#6B7554]">
             invest@regencollective.xyz
           </div>
-
-          <div className="absolute bottom-4 left-0 right-0 text-center">
-            <div className="text-xs text-[#6B7554]/50">
-              Term sheet available upon request
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -1357,8 +1292,14 @@ export default function InvestorReadyPitch() {
                 : "opacity-0 translate-y-12 z-10 pointer-events-none"
             }`}
           >
-            {/* Left side content - only this part scrolls if needed */}
-            <div className="w-full md:w-1/2 max-w-xl md:pr-6 mb-6 md:mb-0 overflow-y-auto max-h-[calc(100vh-8rem)] scrollbar-hide">
+            {/* Left side content - Only this part scrolls if needed */}
+            <div
+              className={`w-full md:w-1/2 max-w-xl md:pr-6 ${
+                index === 1 || index === 2 || index === 3
+                  ? "mb-2 max-h-[60vh]"
+                  : "mb-6"
+              } md:mb-0 overflow-y-auto md:max-h-[calc(100vh-8rem)] scrollbar-hide`}
+            >
               <div className="max-w-lg mx-auto md:mx-0">
                 {/* Slide title */}
                 <div className="mb-1 text-sm text-[#6B7554]/70 tracking-wider font-medium">
@@ -1493,18 +1434,6 @@ export default function InvestorReadyPitch() {
                   </div>
                 )}
 
-                {/* CTA button */}
-                {slide.cta && (
-                  <div className="text-center md:text-left">
-                    <button className="px-6 py-2 bg-[#6B7554] text-white rounded-lg font-bold text-sm shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A] hover:scale-105">
-                      {slide.cta}
-                    </button>
-                    {slide.contact && (
-                      <div className="mt-2 text-xs">{slide.contact}</div>
-                    )}
-                  </div>
-                )}
-
                 {/* Bottom stats highlight */}
                 {slide.stat && (
                   <div className="mt-4 bg-white rounded-lg p-3 shadow-sm">
@@ -1516,8 +1445,14 @@ export default function InvestorReadyPitch() {
               </div>
             </div>
 
-            {/* Right side visual - non-scrollable with fixed height */}
-            <div className="w-full md:w-1/2 flex items-center justify-center">
+            {/* Right side visual - Adjusted for mobile on slides 2, 3, 4 */}
+            <div
+              className={`w-full md:w-1/2 flex items-center justify-center ${
+                index === 1 || index === 2 || index === 3
+                  ? "h-[25vh] md:h-auto"
+                  : ""
+              }`}
+            >
               {renderVisual(slide.visual)}
             </div>
           </div>
