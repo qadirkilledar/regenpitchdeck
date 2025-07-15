@@ -1,0 +1,214 @@
+export const slides = [
+  {
+    id: "intro",
+    title: "REGEN COLLECTIVE",
+    subtitle: "Democratizzare un Mercato da 12 Trilioni di Dollari",
+    content: "Abbattiamo le barriere all’investimento immobiliare commerciale.",
+    callout: "SEED ROUND - $5M",
+    visual: "IntroVisual",
+  },
+  {
+    id: "problem",
+    title: "IL PROBLEMA",
+    subtitle: "Immobili Premium Inaccessibili",
+    content: "Il mercato immobiliare commerciale oggi:",
+    points: [
+      "Investimento minimo di $500.000+",
+      "Liquidità bloccati per 18-36 mesi",
+      "Accesso geografico limitato",
+      "Strutture REIT complesse",
+      "Riservato all’ultra-ricco (0,1%)",
+    ],
+    stat: "12 TRILIONI DI DOLLARI DI MERCATO SBARRATI",
+    visual: "ProblemVisual",
+  },
+  {
+    id: "solution",
+    title: "LA NOSTRA SOLUZIONE",
+    subtitle: "Piattaforma Rivoluzionaria di Tokenizzazione",
+    content: "Regen Collective apre l’immobiliare a tutti:",
+    points: [
+      "<strong>Investimento minimo di $100</strong> vs i tradizionali $500K+",
+      "<strong>Liquidità istantanea 24/7</strong> vs lock-up di 18-36 mesi",
+      "<strong>Governance globale</strong> da qualsiasi luogo, per chiunque",
+      "Struttura REIT <strong>decentralizzata</strong>",
+      "Investimenti <strong>frazionati</strong> in proprietà premium",
+    ],
+    stat: "DEMOCRATIZZARE L’ACCESSO AL 99,9%",
+    visual: "SolutionVisual",
+  },
+  {
+    id: "product",
+    title: "LA PIATTAFORMA",
+    subtitle: "Ecosistema di Investimento Completo",
+    features: [
+      {
+        title: "Motore di Tokenizzazione",
+        description:
+          "Converte proprietà premium in token blockchain con sicurezza militare",
+        icon: "FaCogs",
+      },
+      {
+        title: "Marketplace Globale",
+        description:
+          "Compra, vendi e scambia token immobiliari senza attriti 24/7/365",
+        icon: "FaChartLine",
+      },
+      {
+        title: "Certificati di Proprietà",
+        description:
+          "Documenti SPV on-chain pienamente conformi per tokenizzazione RWA legalmente garantita",
+        icon: "FaRegLightbulb",
+      },
+      {
+        title: "Governance degli Investimenti",
+        description:
+          "Voto e governance comunitaria per il reinvestimento e lo sviluppo rigenerativo",
+        icon: "FaUserTie",
+      },
+      {
+        title: "AI Analytics",
+        description:
+          "Algoritmi proprietari per la valutazione immobiliare e l’analisi del rischio",
+        icon: "FaChartLine",
+      },
+    ],
+    visual: "ProductVisual",
+  },
+  {
+    id: "market",
+    title: "L’OPPORTUNITÀ",
+    subtitle: "Mercato Massiccio e Inesplorato",
+    content: "Stiamo entrando in un mercato enorme con tecnologia dirompente:",
+    stats: [
+      { label: "Mercato Immobiliare Globale", value: "$12T" },
+      { label: "Attualmente Tokenizzato", value: "<1%" },
+      { label: "Investitori Potenziali", value: "400M+" },
+      { label: "Volume Transazioni Annuale", value: "$200B" },
+      { label: "Mercato Commerciale Londra", value: "$20B" },
+      { label: "Obiettivo 1° Fondo CoLiving", value: "$50M" },
+    ],
+    visual: "MarketVisual",
+  },
+  {
+    id: "revenue",
+    title: "FLUSSI DI RICAVO",
+    subtitle: "Fonti di Entrata Diversificate",
+    revenueItems: [
+      {
+        title: "Gestione Immobiliare & Sviluppo Portafoglio",
+        description:
+          "CoLiving, pod-hotel, studi creativi e spazi eventi per la nostra community di 50 tenant con ARR di $200.000",
+      },
+      {
+        title: "Commissioni Tokenizzazione SPV",
+        description:
+          "0,5-1% su costi di minting SPV, 0,5% di commissioni di transazione, fee di staking/liquidity-pool",
+      },
+      {
+        title: "Token Indice Portafoglio",
+        description:
+          "Yield farming: staking del token Regen alimentato dai rendimenti SPV per buy-back di quote di proprietà",
+      },
+    ],
+    visual: "RevenueVisual",
+  },
+  {
+    id: "traction",
+    title: "I NOSTRI RISULTATI",
+    subtitle: "Progressi Eccezionali",
+    content: "Cosa abbiamo raggiunto con capitale minimo:",
+    achievements: [
+      "Sviluppo MVP piattaforma (80% completato)",
+      "Quadro normativo in 47+ giurisdizioni",
+      "Partnership strategiche con 3 sviluppatori immobiliari",
+      "Wait-list di 15.000+ potenziali investitori",
+      "$200.000 ARR dalle attività di CoLiving e gestione studi creativi",
+      "3 sviluppi immobiliari premium a Londra acquisiti off-market con GDV $100 milioni",
+    ],
+    visual: "TractionVisual",
+  },
+  {
+    id: "roadmap",
+    title: "PIANO DI SVILUPPO",
+    subtitle: "Percorso Chiaro verso il Dominio di Mercato",
+    stages: [
+      {
+        quarter: "Q4 2025",
+        title: "ESPANDIAMO",
+        points: ["5+ proprietà", "Mercato secondario", "Campagna marketing"],
+      },
+      {
+        quarter: "Q1 2026",
+        title: "CRESCIAMO",
+        points: ["10+ proprietà", "AI", "30.000+ investitori"],
+      },
+      {
+        quarter: "Q2 2026",
+        title: "DOMINIAMO",
+        points: [
+          "20+ proprietà premium",
+          "50.000 utenti attivi",
+          "Partnership istituzionali",
+        ],
+      },
+    ],
+    visual: "RoadmapVisual",
+  },
+  {
+    id: "team",
+    title: "IL TEAM",
+    subtitle: "Competenze di Classe Mondiale",
+    team: [
+      { name: "Miki Elson", title: "Founder & CEO", icon: "ME" },
+      { name: "Michael Hernandez", title: "CMO", icon: "MH" },
+      { name: "Qadir Killedar", title: "CTO", icon: "QK" },
+      { name: "Caz Rue", title: "CFO", icon: "CR" },
+    ],
+    advisors: [
+      {
+        name: "Dominic Ryder",
+        title: "Veterano di Tokenomics e DeFi",
+        company: "Alvara",
+      },
+      { name: "Mr Cang", title: "Lead investor", company: "Fund Management" },
+      { name: "Eulan", title: "RWA Source", company: "Londra/Hong Kong" },
+      {
+        name: "Kaz Elkholy",
+        title: "Acquisizione Immobiliare",
+        company: "Esperto di Negoziazione",
+      },
+    ],
+    visual: "TeamAndAdvisorsVisual",
+  },
+  {
+    id: "investment",
+    title: "L’INVESTIMENTO",
+    subtitle: "Seed Round - $5M",
+    terms: [
+      { label: "Valutazione", value: "$5M" },
+      { label: "Investimento Minimo", value: "$40K" },
+      { label: "Struttura", value: "1% pre-seed, 20% sconto round successivo" },
+      {
+        label: "Uso dei Fondi",
+        value:
+          "Completamento piattaforma, marketing retail, approvazioni normative, onboarding proprietà",
+      },
+    ],
+    projections: [
+      { year: "Anno 1", revenue: "$1.75M", users: "100 tenant" },
+      { year: "Anno 2", revenue: "$5M", users: "200 tenant" },
+      { year: "Anno 3", revenue: "$15M", users: "600 tenant" },
+    ],
+    note: "Proiezioni basate su modello fee 1-3%. Allocazione limitata disponibile. Term-sheet su richiesta.",
+    visual: "InvestmentVisual",
+  },
+  {
+    id: "cta",
+    title: "UNISCITI ALLA RIVOLUZIONE",
+    subtitle: "Accesso Esclusivo Early-Stage",
+    content:
+      "Entra nel futuro dell’investimento immobiliare. Ottieni accesso anticipato alla piattaforma che sta ridisegnando il mercato immobiliare commerciale da $12T — trasparente, frazionato e costruito per la prossima generazione di investitori.",
+    visual: "CTAVisual",
+  },
+];
