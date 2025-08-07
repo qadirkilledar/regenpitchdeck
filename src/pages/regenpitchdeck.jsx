@@ -475,7 +475,7 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-md relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs font-bold rounded-md">
-            SEED ROUND
+            PRE SEED ROUND
           </div>
           <div className="text-lg font-bold mb-4 text-[#6B7554]">
             Investment Terms

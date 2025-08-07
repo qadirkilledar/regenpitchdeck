@@ -184,11 +184,11 @@ export const slides = [
   {
     id: "investment",
     title: "L’INVESTIMENTO",
-    subtitle: "Seed Round - $5M",
+    subtitle: "Pre-Seed Round - $5M",
     terms: [
+      { label: "Investimento Minimo", value: "$150K" },
       { label: "Valutazione", value: "$5M" },
-      { label: "Investimento Minimo", value: "$40K" },
-      { label: "Struttura", value: "1% pre-seed, 20% sconto round successivo" },
+      { label: "Struttura", value: "3% pre-seed, 20% sconto round successivo" },
       {
         label: "Uso dei Fondi",
         value:
@@ -203,6 +203,7 @@ export const slides = [
     note: "Proiezioni basate su modello fee 1-3%. Allocazione limitata disponibile. Term-sheet su richiesta.",
     visual: "InvestmentVisual",
   },
+
   {
     id: "cta",
     title: "UNISCITI ALLA RIVOLUZIONE",

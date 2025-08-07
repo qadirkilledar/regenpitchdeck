@@ -184,11 +184,11 @@ export const slides = [
   {
     id: "investment",
     title: "THE INVESTMENT",
-    subtitle: "Seed Round - $5M",
+    subtitle: "Pre-Seed Round - $5M",
     terms: [
+      { label: "Minimum Investment", value: "$150K" },
       { label: "Valuation", value: "$5M" },
-      { label: "Minimum Investment", value: "$40K" },
-      { label: "Structure", value: "1% pre-seed, 20% discount on next round" },
+      { label: "Structure", value: "3% pre-seed, 20% discount on next round" },
       {
         label: "Use of Funds",
         value:
@@ -203,6 +203,7 @@ export const slides = [
     note: "Revenue projections based on 1-3% fee model across onboarded properties. Limited allocation available. Term-sheet available on request.",
     visual: "InvestmentVisual",
   },
+
   {
     id: "cta",
     title: "JOIN THE REVOLUTION",

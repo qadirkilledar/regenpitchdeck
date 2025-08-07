@@ -189,13 +189,13 @@ export const slides = [
   {
     id: "investment",
     title: "LA INVERSIÓN",
-    subtitle: "Seed Round - $5M",
+    subtitle: "Pre-Seed Round - $5M",
     terms: [
+      { label: "Inversión Mínima", value: "$150K" },
       { label: "Valoración", value: "$5M" },
-      { label: "Inversión Mínima", value: "$40K" },
       {
         label: "Estructura",
-        value: "1% pre-seed, 20% descuento próxima ronda",
+        value: "3% pre-seed, 20% descuento próxima ronda",
       },
       {
         label: "Uso de Fondos",
