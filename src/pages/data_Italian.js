@@ -2,9 +2,10 @@ export const slides = [
   {
     id: "intro",
     title: "REGEN COLLECTIVE",
-    subtitle: "Democratizzare un Mercato da 12 Trilioni di Dollari",
-    content: "Abbattiamo le barriere all’investimento immobiliare commerciale.",
-    callout: "SEED ROUND - $5M",
+    subtitle: "Democratizzando un Mercato da 12 Trilioni di Dollari",
+    content:
+      "Abbattendo le barriere dell’ investimento immobiliare commerciale.",
+    callout: "PRE SEED ROUND - $5M",
     visual: "IntroVisual",
   },
   {
@@ -17,16 +18,17 @@ export const slides = [
       "Liquidità bloccati per 18-36 mesi",
       "Accesso geografico limitato",
       "Strutture REIT complesse",
-      "Riservato all’ultra-ricco (0,1%)",
+      "Riservato agli ultra ricchi  (0,1%)",
     ],
-    stat: "12 TRILIONI DI DOLLARI DI MERCATO SBARRATI",
+    stat: "12 trilioni di Dollari di  mercato segregati da una barriera ",
     visual: "ProblemVisual",
   },
   {
     id: "solution",
     title: "LA NOSTRA SOLUZIONE",
     subtitle: "Piattaforma Rivoluzionaria di Tokenizzazione",
-    content: "Regen Collective apre l’immobiliare a tutti:",
+    content:
+      "Regen collective rende accessibile il mercato immobiliare a tutti:",
     points: [
       "<strong>Investimento minimo di $100</strong> vs i tradizionali $500K+",
       "<strong>Liquidità istantanea 24/7</strong> vs lock-up di 18-36 mesi",
@@ -34,7 +36,7 @@ export const slides = [
       "Struttura REIT <strong>decentralizzata</strong>",
       "Investimenti <strong>frazionati</strong> in proprietà premium",
     ],
-    stat: "DEMOCRATIZZARE L’ACCESSO AL 99,9%",
+    stat: "DEMOCRATIZZANDO L’ACCESSO AL 99,9%",
     visual: "SolutionVisual",
   },
   {
@@ -45,19 +47,19 @@ export const slides = [
       {
         title: "Motore di Tokenizzazione",
         description:
-          "Converte proprietà premium in token blockchain con sicurezza militare",
+          "Converte proprietà immobiliari premium in token digitali su blockchain, con standard di sicurezza militare ",
         icon: "FaCogs",
       },
       {
         title: "Marketplace Globale",
         description:
-          "Compra, vendi e scambia token immobiliari senza attriti 24/7/365",
+          "Compra, vendi e scambia token immobiliari in tempo reale e massima semplicità.",
         icon: "FaChartLine",
       },
       {
         title: "Certificati di Proprietà",
         description:
-          "Documenti SPV on-chain pienamente conformi per tokenizzazione RWA legalmente garantita",
+          "Documentazione SPV on-chain conforme, per una tokenizzazione RWA legalmente tutelata.",
         icon: "FaRegLightbulb",
       },
       {
@@ -78,8 +80,9 @@ export const slides = [
   {
     id: "market",
     title: "L’OPPORTUNITÀ",
-    subtitle: "Mercato Massiccio e Inesplorato",
-    content: "Stiamo entrando in un mercato enorme con tecnologia dirompente:",
+    subtitle: "Un mercato ampio, ancora offline.",
+    content:
+      "Stiamo applicando tecnología dirompente in un mercato immobiliare globale.",
     stats: [
       { label: "Mercato Immobiliare Globale", value: "$12T" },
       { label: "Attualmente Tokenizzato", value: "<1%" },
@@ -98,17 +101,17 @@ export const slides = [
       {
         title: "Gestione Immobiliare & Sviluppo Portafoglio",
         description:
-          "CoLiving, pod-hotel, studi creativi e spazi eventi per la nostra community di 50 tenant con ARR di $200.000",
+          "Co-living, pod hotel, studi creativi e affitto di spazi per eventi destinati alla nostra community creativa di residenti. Attualmente: 50 residenti con un ricavo ricorrente annuale (ARR) di £200,000",
       },
       {
-        title: "Commissioni Tokenizzazione SPV",
+        title: "Commissioni di Tokenizzazione SPV",
         description:
-          "0,5-1% su costi di minting SPV, 0,5% di commissioni di transazione, fee di staking/liquidity-pool",
+          "0.5-1% dei costi di creazione dello SPV( minting) % Di commissioni sulle transazioni, commissioni per staking e pool di liquidità ",
       },
       {
-        title: "Token Indice Portafoglio",
+        title: "Token Indice del Portafoglio",
         description:
-          "Yield farming: staking del token Regen alimentato dai rendimenti SPV per buy-back di quote di proprietà",
+          "basato sui ricavi generati delle proprietà, consente di ottenere rendimenti tramite staking del token Regen. I proventi posso riacquistare quote del SPV, rafforzando la posizione patrimoniale interna.",
       },
     ],
     visual: "RevenueVisual",
@@ -119,12 +122,12 @@ export const slides = [
     subtitle: "Progressi Eccezionali",
     content: "Cosa abbiamo raggiunto con capitale minimo:",
     achievements: [
-      "Sviluppo MVP piattaforma (80% completato)",
+      "Sviluppo MVP piattaforma (60% completato)",
       "Quadro normativo in 47+ giurisdizioni",
       "Partnership strategiche con 3 sviluppatori immobiliari",
-      "Wait-list di 15.000+ potenziali investitori",
-      "$200.000 ARR dalle attività di CoLiving e gestione studi creativi",
-      "3 sviluppi immobiliari premium a Londra acquisiti off-market con GDV $100 milioni",
+      "Lista d’attesa di oltre 15000 potenziali investitori",
+      "£200.000 ARR dalle attività di CoLiving e gestione studi creativi",
+      "3 sviluppi immobiliari a Londra assicurati off-market con un valore lordo di vendita (GDV) di 100 milioni di £",
     ],
     visual: "TractionVisual",
   },
@@ -135,20 +138,24 @@ export const slides = [
     stages: [
       {
         quarter: "Q4 2025",
-        title: "ESPANDIAMO",
-        points: ["5+ proprietà", "Mercato secondario", "Campagna marketing"],
+        title: "Espansione",
+        points: [
+          "Struttura Legale",
+          "100% MVP Completato",
+          "Campagna marketing",
+        ],
       },
       {
         quarter: "Q1 2026",
-        title: "CRESCIAMO",
-        points: ["10+ proprietà", "AI", "30.000+ investitori"],
+        title: "Crescita",
+        points: ["5+ proprietà", "AI", "15,000+ investitori"],
       },
       {
         quarter: "Q2 2026",
-        title: "DOMINIAMO",
+        title: "Dominio",
         points: [
-          "20+ proprietà premium",
-          "50.000 utenti attivi",
+          "10+ proprietà premium",
+          "20,000 utenti attivi",
           "Partnership istituzionali",
         ],
       },
@@ -196,11 +203,11 @@ export const slides = [
       },
     ],
     projections: [
-      { year: "Anno 1", revenue: "$1.75M", users: "100 tenant" },
-      { year: "Anno 2", revenue: "$5M", users: "200 tenant" },
-      { year: "Anno 3", revenue: "$15M", users: "600 tenant" },
+      { year: "Anno 1", revenue: "$1.75M", users: "100 residenti" },
+      { year: "Anno 2", revenue: "$5M", users: "200 residenti" },
+      { year: "Anno 3", revenue: "$15M", users: "600 residenti" },
     ],
-    note: "Proiezioni basate su modello fee 1-3%. Allocazione limitata disponibile. Term-sheet su richiesta.",
+    note: "Proiezioni basate su modello fee 1-3%. Disponibilità limitata. Term-sheet su richiesta.",
     visual: "InvestmentVisual",
   },
 
