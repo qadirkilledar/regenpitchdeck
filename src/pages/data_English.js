@@ -203,7 +203,6 @@ export const slides = [
     note: "Revenue projections based on 1-3% fee model across onboarded properties. Limited allocation available. Term-sheet available on request.",
     visual: "InvestmentVisual",
   },
-
   {
     id: "cta",
     title: "JOIN THE REVOLUTION",
@@ -213,3 +212,108 @@ export const slides = [
     visual: "CTAVisual",
   },
 ];
+
+export const texts = {
+  header: "REGEN COLLECTIVE",
+  logo: {
+    letter: "R",
+    name: "REGEN",
+  },
+  navigation: {
+    prev: "Previous slide",
+    next: "Next slide",
+    goToSlide: "Go to slide {index}",
+  },
+  loading: {
+    header: "REGEN COLLECTIVE",
+  },
+  revenue: {
+    header: "REVENUE",
+    labels: {
+      recurring: "Recurring",
+      transactional: "Transactional",
+      licensing: "Licensing",
+    },
+    itemLabels: ["Primary", "Secondary", "Tertiary"],
+    footer: "MULTI-CHANNEL REVENUE",
+  },
+  problem: {
+    header: "TRADITIONAL REAL ESTATE",
+    marketAccess: "Market Access",
+    access: "0.1% with access",
+    excluded: "99.9% excluded",
+    minInvestmentLabel: "Min Investment",
+    minInvestmentValue: "$500,000+",
+  },
+  solution: {
+    header: "REGEN COLLECTIVE",
+    marketAccess: "Market Access",
+    access: "100% with access",
+    excluded: "0% excluded",
+    minInvestmentLabel: "Min Investment",
+    minInvestmentValue: "$100",
+  },
+  product: {
+    items: ["Tokenization", "Marketplace", "Certificates", "Analytics"],
+    footer: "Complete Platform",
+  },
+  market: {
+    header: "Our Market Opportunity",
+    marketSizeLabel: "Commercial Real-Estate Market Size",
+    marketSizeValue: "$12 Trillion",
+    tokenizedLabel: "Currently Tokenized",
+    tokenizedValue: "< 1% ($120B)",
+    investorsLabel: "Potential Investors",
+    investorsValue: "400M+",
+    volumeLabel: "Annual Volume",
+    volumeValue: "$600B",
+    footer: "First-Mover Advantage",
+  },
+  traction: {
+    header: "Milestones Achieved",
+    achievements: [
+      { title: "Platform Development", desc: "MVP 80% complete" },
+      { title: "Regulatory Framework", desc: "47+ jurisdictions" },
+      { title: "Property Partnerships", desc: "3 major developers" },
+      { title: "Investor Waitlist", desc: "15,000+ potential investors" },
+      {
+        title: "Initial Property Portfolio",
+        desc: "3 premium properties secured",
+      },
+    ],
+    footer: "$85M in Properties Ready for Tokenization",
+  },
+  roadmap: {
+    header: "Growth Trajectory",
+    phaseLabels: ["Phase 1", "Phase 2", "Phase 3"],
+    footer: "$500M in Tokenized Assets by Q4 2026",
+  },
+  team: {
+    header: "Team & Advisors",
+    coreTeam: "Core Team",
+    advisors: "Advisors & Investors",
+    experience: "85+ Years Combined Relevant Experience",
+    backing: "Industry Leaders Backing Our Vision",
+  },
+  investment: {
+    header: "PRE SEED ROUND",
+    termsHeader: "Investment Terms",
+    projectionsHeader: "Financial Projections",
+    footer: "Limited Allocation Available",
+  },
+  intro: {
+    marketValue: "$12T",
+    marketLabel: "Market Opportunity",
+    barrier: "$500K+ BARRIER TODAY",
+    regen: "$100 WITH REGEN",
+  },
+  cta: {
+    logo: "R",
+    header: "REGEN COLLECTIVE",
+    subtitle: "Democratizing Commercial Real-Estate",
+    content:
+      "Be part of the platform that unlocks the $12 trillion commercial property market.",
+    button: "INVEST NOW",
+    email: "michael@regencollective.xyz",
+  },
+};

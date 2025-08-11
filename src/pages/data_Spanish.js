@@ -220,3 +220,114 @@ export const slides = [
     visual: "CTAVisual",
   },
 ];
+
+export const texts = {
+  header: "REGEN COLLECTIVE",
+  logo: {
+    letter: "R",
+    name: "REGEN",
+  },
+  navigation: {
+    prev: "Diapositiva anterior",
+    next: "Siguiente diapositiva",
+    goToSlide: "Ir a la diapositiva {index}",
+  },
+  loading: {
+    header: "REGEN COLLECTIVE",
+  },
+  revenue: {
+    header: "INGRESOS",
+    labels: {
+      recurring: "Recurrentes",
+      transactional: "Transaccionales",
+      licensing: "Licencias",
+    },
+    itemLabels: ["Primario", "Secundario", "Terciario"],
+    footer: "INGRESOS MULTICANAL",
+  },
+  problem: {
+    header: "BIENES RAÍCES TRADICIONALES",
+    marketAccess: "Acceso al Mercado",
+    access: "0,1% con acceso",
+    excluded: "99,9% excluido",
+    minInvestmentLabel: "Inversión Mínima",
+    minInvestmentValue: "$500.000+",
+  },
+  solution: {
+    header: "REGEN COLLECTIVE",
+    marketAccess: "Acceso al Mercado",
+    access: "100% con acceso",
+    excluded: "0% excluido",
+    minInvestmentLabel: "Inversión Mínima",
+    minInvestmentValue: "$100",
+  },
+  product: {
+    items: ["Tokenización", "Marketplace", "Certificados", "Analíticas"],
+    footer: "Plataforma Completa",
+  },
+  market: {
+    header: "Nuestra Oportunidad de Mercado",
+    marketSizeLabel: "Tamaño del Mercado Inmobiliario Comercial",
+    marketSizeValue: "$12 Billones",
+    tokenizedLabel: "Actualmente Tokenizado",
+    tokenizedValue: "< 1% ($120B)",
+    investorsLabel: "Inversores Potenciales",
+    investorsValue: "400M+",
+    volumeLabel: "Volumen Anual",
+    volumeValue: "$600B",
+    footer: "Ventaja de Pionero",
+  },
+  traction: {
+    header: "Logros Alcanzados",
+    achievements: [
+      { title: "Desarrollo de Plataforma", desc: "MVP 80% completado" },
+      { title: "Marco Regulatorio", desc: "47+ jurisdicciones" },
+      {
+        title: "Asociaciones Inmobiliarias",
+        desc: "3 desarrolladores principales",
+      },
+      {
+        title: "Lista de Espera de Inversores",
+        desc: "15,000+ inversores potenciales",
+      },
+      {
+        title: "Portafolio Inicial de Propiedades",
+        desc: "3 propiedades premium aseguradas",
+      },
+    ],
+    footer: "$85M en Propiedades Listas para Tokenización",
+  },
+  roadmap: {
+    header: "Trayectoria de Crecimiento",
+    phaseLabels: ["Fase 1", "Fase 2", "Fase 3"],
+    footer: "$500M en Activos Tokenizados para Q4 2026",
+  },
+  team: {
+    header: "Equipo & Asesores",
+    coreTeam: "Equipo Principal",
+    advisors: "Asesores & Inversores",
+    experience: "85+ Años de Experiencia Relevante Combinada",
+    backing: "Líderes de la Industria Apoyan Nuestra Visión",
+  },
+  investment: {
+    header: "RONDA PRE-SEED",
+    termsHeader: "Términos de Inversión",
+    projectionsHeader: "Proyecciones Financieras",
+    footer: "Asignación Limitada Disponible",
+  },
+  intro: {
+    marketValue: "$12T",
+    marketLabel: "Oportunidad de Mercado",
+    barrier: "$500K+ BARRERA HOY",
+    regen: "$100 CON REGEN",
+  },
+  cta: {
+    logo: "R",
+    header: "REGEN COLLECTIVE",
+    subtitle: "Democratizando Bienes Raíces Comerciales",
+    content:
+      "Sé parte de la plataforma que desbloquea el mercado inmobiliario comercial de $12 billones.",
+    button: "INVIERTE AHORA",
+    email: "michael@regencollective.xyz",
+  },
+};

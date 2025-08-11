@@ -13,15 +13,15 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-// Import the three datasets
-import { slides as dataEN } from "./data_English";
-import { slides as dataIT } from "./data_Italian";
-import { slides as dataES } from "./data_Spanish";
+// Import the language datasets
+import { slides as dataEN, texts as textsEN } from "./data_English";
+import { slides as dataIT, texts as textsIT } from "./data_Italian";
+import { slides as dataES, texts as textsES } from "./data_Spanish";
 
 const languageMap = {
-  EN: dataEN,
-  IT: dataIT,
-  ES: dataES,
+  EN: { slides: dataEN, texts: textsEN },
+  IT: { slides: dataIT, texts: textsIT },
+  ES: { slides: dataES, texts: textsES },
 };
 
 export default function InvestorReadyPitch() {
@@ -29,7 +29,7 @@ export default function InvestorReadyPitch() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [lang, setLang] = useState("EN"); // Default = English
-  const slides = languageMap[lang]; // Dynamic slides
+  const { slides, texts } = languageMap[lang]; // Dynamic slides and texts
   const slideRefs = useRef([]);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
@@ -96,15 +96,13 @@ export default function InvestorReadyPitch() {
   };
 
   // -----------  VISUAL COMPONENTS  ------------
-  // (RevenueVisual, ProblemVisual, SolutionVisual, etc.)
-  // Keep every component exactly as provided; only the slide data changed.
   const RevenueVisual = () => {
     const revenueData = slides.find((s) => s.id === "revenue");
     if (!revenueData) return null;
     const revenueMetrics = [
-      { label: "Recurring", value: 65 },
-      { label: "Transactional", value: 35 },
-      { label: "Licensing", value: 20 },
+      { label: texts.revenue.labels.recurring, value: 65 },
+      { label: texts.revenue.labels.transactional, value: 35 },
+      { label: texts.revenue.labels.licensing, value: 20 },
     ];
     return (
       <div className="relative flex items-center justify-center w-full h-full">
@@ -114,7 +112,7 @@ export default function InvestorReadyPitch() {
             <div className="absolute top-4 right-4">
               <div className="px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full shadow-lg animate-pulse">
                 <span className="text-xs font-bold tracking-wider">
-                  💰 REVENUE
+                  💰 {texts.revenue.header}
                 </span>
               </div>
             </div>
@@ -161,11 +159,7 @@ export default function InvestorReadyPitch() {
                       <div className="font-bold text-sm text-[#6B7554] flex items-center">
                         {item.title}
                         <span className="ml-2 text-xs font-normal bg-[#6B7554]/10 px-2 py-0.5 rounded-full">
-                          {i === 0
-                            ? "Primary"
-                            : i === 1
-                            ? "Secondary"
-                            : "Tertiary"}
+                          {texts.revenue.itemLabels[i]}
                         </span>
                       </div>
                       <div className="text-xs text-[#6B7554]/70 mt-1">
@@ -178,7 +172,7 @@ export default function InvestorReadyPitch() {
             </div>
             <div className="mt-4 bg-gradient-to-r from-[#6B7554] to-[#6B7554]/90 text-white rounded-lg p-3 text-center shadow-lg">
               <div className="text-sm font-bold tracking-wider">
-                MULTI-CHANNEL REVENUE
+                {texts.revenue.footer}
               </div>
               <div className="flex justify-center mt-1 space-x-2">
                 {[1, 2, 3].map((dot) => (
@@ -200,11 +194,11 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-md relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden max-h-full md:max-h-none">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
-            <span className="text-xs">TRADITIONAL REAL ESTATE</span>
+            <span className="text-xs">{texts.problem.header}</span>
           </div>
           <div className="mt-4">
             <div className="text-lg font-bold mb-2 text-[#6B7554]">
-              Market Access
+              {texts.problem.marketAccess}
             </div>
             <div className="grid grid-cols-10 gap-1">
               {Array.from({ length: 50 }).map((_, i) => (
@@ -217,14 +211,16 @@ export default function InvestorReadyPitch() {
               ))}
             </div>
             <div className="flex justify-between mt-2 text-xs text-[#6B7554]/70">
-              <div>0.1% with access</div>
-              <div>99.9% excluded</div>
+              <div>{texts.problem.access}</div>
+              <div>{texts.problem.excluded}</div>
             </div>
             <div className="mt-2">
               <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Min Investment</div>
+                <div className="text-sm font-medium">
+                  {texts.problem.minInvestmentLabel}
+                </div>
                 <div className="text-sm font-bold text-[#6B7554]">
-                  $500,000+
+                  {texts.problem.minInvestmentValue}
                 </div>
               </div>
               <div className="h-2 w-full bg-[#6B7554]/10 rounded-full">
@@ -245,11 +241,11 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-md relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative overflow-hidden max-h-full md:max-h-none">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs rounded-full">
-            <span className="text-xs">REGEN COLLECTIVE</span>
+            <span className="text-xs">{texts.solution.header}</span>
           </div>
           <div className="mt-4">
             <div className="text-lg font-bold mb-2 text-[#6B7554]">
-              Market Access
+              {texts.solution.marketAccess}
             </div>
             <div className="grid grid-cols-10 gap-1">
               {Array.from({ length: 50 }).map((_, i) => (
@@ -260,13 +256,17 @@ export default function InvestorReadyPitch() {
               ))}
             </div>
             <div className="flex justify-between mt-2 text-xs text-[#6B7554]/70">
-              <div>100% with access</div>
-              <div>0% excluded</div>
+              <div>{texts.solution.access}</div>
+              <div>{texts.solution.excluded}</div>
             </div>
             <div className="mt-2">
               <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-medium">Min Investment</div>
-                <div className="text-sm font-bold text-[#6B7554]">$100</div>
+                <div className="text-sm font-medium">
+                  {texts.solution.minInvestmentLabel}
+                </div>
+                <div className="text-sm font-bold text-[#6B7554]">
+                  {texts.solution.minInvestmentValue}
+                </div>
               </div>
               <div className="h-2 w-full bg-[#6B7554]/10 rounded-full">
                 <div
@@ -285,30 +285,28 @@ export default function InvestorReadyPitch() {
     <div className="relative flex items-center justify-center w-full h-full">
       <div className="w-full max-w-md relative">
         <div className="grid grid-cols-2 gap-2">
-          {["Tokenization", "Marketplace", "Certificates", "Analytics"].map(
-            (t, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center"
-              >
-                <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
-                  {i === 0 ? (
-                    <FaExchangeAlt className="w-3 h-3" />
-                  ) : i === 1 ? (
-                    <FaBuilding className="w-3 h-3" />
-                  ) : i === 2 ? (
-                    <FaFileContract className="w-3 h-3" />
-                  ) : (
-                    <FaChartLine className="w-3 h-3" />
-                  )}
-                </div>
-                <div className="text-xs font-bold text-[#6B7554]">{t}</div>
+          {texts.product.items.map((t, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-xl shadow-lg p-2 flex flex-col items-center justify-center text-center"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#6B7554]/10 flex items-center justify-center text-[#6B7554] mb-1">
+                {i === 0 ? (
+                  <FaExchangeAlt className="w-3 h-3" />
+                ) : i === 1 ? (
+                  <FaBuilding className="w-3 h-3" />
+                ) : i === 2 ? (
+                  <FaFileContract className="w-3 h-3" />
+                ) : (
+                  <FaChartLine className="w-3 h-3" />
+                )}
               </div>
-            )
-          )}
+              <div className="text-xs font-bold text-[#6B7554]">{t}</div>
+            </div>
+          ))}
         </div>
         <div className="mt-2 bg-[#6B7554] text-white rounded-lg p-2 text-center">
-          <div className="text-xs font-bold">Complete Platform</div>
+          <div className="text-xs font-bold">{texts.product.footer}</div>
         </div>
       </div>
     </div>
@@ -319,12 +317,12 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-md relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-3 text-[#6B7554]">
-            Our Market Opportunity
+            {texts.market.header}
           </div>
           <div className="relative mb-4 pt-2">
             <div className="flex justify-between mb-1 text-xs">
-              <div>Commercial Real-Estate Market Size</div>
-              <div className="font-bold">$12 Trillion</div>
+              <div>{texts.market.marketSizeLabel}</div>
+              <div className="font-bold">{texts.market.marketSizeValue}</div>
             </div>
             <div className="h-3 w-full bg-[#6B7554]/10 rounded-full overflow-hidden">
               <div
@@ -335,8 +333,8 @@ export default function InvestorReadyPitch() {
           </div>
           <div className="relative mb-4">
             <div className="flex justify-between mb-1 text-xs">
-              <div>Currently Tokenized</div>
-              <div className="font-bold">&lt; 1% ($120B)</div>
+              <div>{texts.market.tokenizedLabel}</div>
+              <div className="font-bold">{texts.market.tokenizedValue}</div>
             </div>
             <div className="h-3 w-full bg-[#6B7554]/10 rounded-full overflow-hidden">
               <div
@@ -347,18 +345,24 @@ export default function InvestorReadyPitch() {
           </div>
           <div className="relative py-3 grid grid-cols-2 gap-3">
             <div className="bg-[#6B7554]/10 rounded-lg p-3 text-center">
-              <div className="text-xl font-bold text-[#6B7554]">400M+</div>
+              <div className="text-xl font-bold text-[#6B7554]">
+                {texts.market.investorsValue}
+              </div>
               <div className="text-xs text-[#6B7554]/70">
-                Potential Investors
+                {texts.market.investorsLabel}
               </div>
             </div>
             <div className="bg-[#6B7554]/10 rounded-lg p-3 text-center">
-              <div className="text-xl font-bold text-[#6B7554]">$600B</div>
-              <div className="text-xs text-[#6B7554]/70">Annual Volume</div>
+              <div className="text-xl font-bold text-[#6B7554]">
+                {texts.market.volumeValue}
+              </div>
+              <div className="text-xs text-[#6B7554]/70">
+                {texts.market.volumeLabel}
+              </div>
             </div>
           </div>
           <div className="mt-3 bg-[#6B7554] text-white rounded-lg p-3 text-center">
-            <div className="text-sm font-bold">First-Mover Advantage</div>
+            <div className="text-sm font-bold">{texts.market.footer}</div>
           </div>
         </div>
       </div>
@@ -370,7 +374,7 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-lg relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-5 text-[#6B7554]">
-            Growth Trajectory
+            {texts.roadmap.header}
           </div>
           <div className="relative">
             <div className="absolute left-3 top-6 bottom-6 w-1 bg-gradient-to-b from-[#6B7554]/20 via-[#6B7554]/60 to-[#6B7554]/90"></div>
@@ -396,11 +400,7 @@ export default function InvestorReadyPitch() {
                           {stage.quarter}
                         </div>
                         <div className="text-xs font-semibold text-[#6B7554] px-2 py-0.5 bg-[#6B7554]/20 rounded-full">
-                          {i === 0
-                            ? "Phase 1"
-                            : i === 1
-                            ? "Phase 2"
-                            : "Phase 3"}
+                          {texts.roadmap.phaseLabels[i]}
                         </div>
                       </div>
                       <div className="font-bold text-sm mb-2 text-[#6B7554]">
@@ -422,9 +422,7 @@ export default function InvestorReadyPitch() {
             </div>
           </div>
           <div className="mt-5 bg-[#6B7554] text-white rounded-lg p-3 text-center shadow-md">
-            <div className="text-sm font-bold">
-              $500M in Tokenized Assets by Q4 2026
-            </div>
+            <div className="text-sm font-bold">{texts.roadmap.footer}</div>
           </div>
         </div>
       </div>
@@ -475,10 +473,10 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-md relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="absolute top-4 right-4 px-3 py-1 bg-[#6B7554] text-white text-xs font-bold rounded-md">
-            PRE SEED ROUND
+            {texts.investment.header}
           </div>
           <div className="text-lg font-bold mb-4 text-[#6B7554]">
-            Investment Terms
+            {texts.investment.termsHeader}
           </div>
           <div className="grid grid-cols-2 gap-3">
             {slides
@@ -493,15 +491,13 @@ export default function InvestorReadyPitch() {
               ))}
           </div>
           <div className="mt-4 text-lg font-bold mb-2 text-[#6B7554]">
-            Financial Projections
+            {texts.investment.projectionsHeader}
           </div>
           <FinancialChart
             data={slides.find((s) => s.id === "investment").projections}
           />
           <div className="mt-2 bg-[#6B7554] text-white rounded-lg p-3 text-center">
-            <div className="text-sm font-bold">
-              Limited Allocation Available
-            </div>
+            <div className="text-sm font-bold">{texts.investment.footer}</div>
           </div>
         </div>
       </div>
@@ -516,16 +512,18 @@ export default function InvestorReadyPitch() {
         <div className="absolute inset-0 rounded-full border-4 border-[#6B7554]/30 scale-80 animate-pulse-fast"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center">
-            <div className="text-5xl font-bold text-[#6B7554]">$12T</div>
-            <div className="text-lg mt-2">Market Opportunity</div>
+            <div className="text-5xl font-bold text-[#6B7554]">
+              {texts.intro.marketValue}
+            </div>
+            <div className="text-lg mt-2">{texts.intro.marketLabel}</div>
           </div>
         </div>
         <div className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
-            <span className="text-sm font-medium">$500K+ BARRIER TODAY</span>
+            <span className="text-sm font-medium">{texts.intro.barrier}</span>
           </div>
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-[#6B7554] text-white rounded-full px-4 py-1 whitespace-nowrap">
-            <span className="text-sm font-bold">$100 WITH REGEN</span>
+            <span className="text-sm font-bold">{texts.intro.regen}</span>
           </div>
         </div>
       </div>
@@ -537,22 +535,10 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-lg relative">
         <div className="bg-white rounded-xl shadow-lg p-4 relative">
           <div className="text-lg font-bold mb-4 text-[#6B7554]">
-            Milestones Achieved
+            {texts.traction.header}
           </div>
           <div className="space-y-3">
-            {[
-              { title: "Platform Development", desc: "MVP 80% complete" },
-              { title: "Regulatory Framework", desc: "47+ jurisdictions" },
-              { title: "Property Partnerships", desc: "3 major developers" },
-              {
-                title: "Investor Waitlist",
-                desc: "15,000+ potential investors",
-              },
-              {
-                title: "Initial Property Portfolio",
-                desc: "3 premium properties secured",
-              },
-            ].map((a, i) => (
+            {texts.traction.achievements.map((a, i) => (
               <div key={i} className="flex items-center">
                 <div className="w-8 h-8 rounded-full bg-[#6B7554] text-white flex items-center justify-center mr-3 flex-shrink-0">
                   <svg
@@ -576,9 +562,7 @@ export default function InvestorReadyPitch() {
             ))}
           </div>
           <div className="mt-4 bg-[#6B7554] text-white rounded-lg p-3 text-center">
-            <div className="text-sm font-bold">
-              $85M in Properties Ready for Tokenization
-            </div>
+            <div className="text-sm font-bold">{texts.traction.footer}</div>
           </div>
         </div>
       </div>
@@ -593,13 +577,13 @@ export default function InvestorReadyPitch() {
         <div className="w-full max-w-lg relative">
           <div className="bg-white rounded-xl shadow-lg p-4 relative">
             <div className="text-lg font-bold mb-4 text-[#6B7554]">
-              Team & Advisors
+              {texts.team.header}
             </div>
             <div className="mb-4">
               <div className="flex items-center mb-2">
                 <div className="w-3 h-3 rounded-full bg-[#6B7554] mr-2"></div>
                 <h3 className="text-sm font-semibold text-[#6B7554]">
-                  Core Team
+                  {texts.team.coreTeam}
                 </h3>
               </div>
               <div className="grid grid-cols-2 gap-2">
@@ -627,7 +611,7 @@ export default function InvestorReadyPitch() {
               <div className="flex items-center mb-2">
                 <div className="w-3 h-3 rounded-full bg-[#6B7554] mr-2"></div>
                 <h3 className="text-sm font-semibold text-[#6B7554]">
-                  Advisors & Investors
+                  {texts.team.advisors}
                 </h3>
               </div>
               <div className="grid grid-cols-1 gap-2">
@@ -655,12 +639,8 @@ export default function InvestorReadyPitch() {
               </div>
             </div>
             <div className="bg-[#6B7554] text-white rounded-lg p-3 text-center space-y-1">
-              <div className="text-sm font-bold">
-                85+ Years Combined Relevant Experience
-              </div>
-              <div className="text-xs font-medium">
-                Industry Leaders Backing Our Vision
-              </div>
+              <div className="text-sm font-bold">{texts.team.experience}</div>
+              <div className="text-xs font-medium">{texts.team.backing}</div>
             </div>
           </div>
         </div>
@@ -673,26 +653,23 @@ export default function InvestorReadyPitch() {
       <div className="w-full max-w-lg relative">
         <div className="bg-white rounded-xl shadow-lg p-4 h-full flex flex-col items-center justify-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#6B7554] flex items-center justify-center mb-4">
-            <div className="text-2xl font-bold text-white">R</div>
-          </div>
-          <div className="text-xl font-bold mb-2 text-[#6B7554]">
-            REGEN COLLECTIVE
-          </div>
-          <div className="text-lg mb-4 text-[#6B7554]/80">
-            Democratizing Commercial Real-Estate
-          </div>
-          <div className="mb-4 px-4">
-            <div className="text-sm text-[#6B7554]/70">
-              Be part of the platform that unlocks the $12 trillion commercial
-              property market.
+            <div className="text-2xl font-bold text-white">
+              {texts.cta.logo}
             </div>
           </div>
-          <button className="px-8 py-3 bg-[#6B7554] text-white rounded-lg font-bold text-base shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A]">
-            INVEST NOW
-          </button>
-          <div className="mt-4 text-sm text-[#6B7554]">
-            invest@regencollective.xyz
+          <div className="text-xl font-bold mb-2 text-[#6B7554]">
+            {texts.cta.header}
           </div>
+          <div className="text-lg mb-4 text-[#6B7554]/80">
+            {texts.cta.subtitle}
+          </div>
+          <div className="mb-4 px-4">
+            <div className="text-sm text-[#6B7554]/70">{texts.cta.content}</div>
+          </div>
+          <button className="px-8 py-3 bg-[#6B7554] text-white rounded-lg font-bold text-base shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A]">
+            {texts.cta.button}
+          </button>
+          <div className="mt-4 text(Sm text-[#6B7554]">{texts.cta.email}</div>
         </div>
       </div>
     </div>
@@ -730,9 +707,13 @@ export default function InvestorReadyPitch() {
   const Logo = () => (
     <div className="fixed top-4 left-4 z-30 flex items-center">
       <div className="w-8 h-8 rounded-full bg-[#6B7554] flex items-center justify-center">
-        <span className="text-sm text-[#F7F5F0] font-bold">R</span>
+        <span className="text-sm text-[#F7F5F0] font-bold">
+          {texts.logo.letter}
+        </span>
       </div>
-      <span className="ml-2 text-base font-bold text-[#6B7554]">REGEN</span>
+      <span className="ml-2 text-base font-bold text-[#6B7554]">
+        {texts.logo.name}
+      </span>
     </div>
   );
 
@@ -746,7 +727,7 @@ export default function InvestorReadyPitch() {
         }`}
         onClick={handlePrevSlide}
         disabled={currentSlide === 0 || isAnimating}
-        aria-label="Previous slide"
+        aria-label={texts.navigation.prev}
       >
         <svg
           width="16"
@@ -769,7 +750,7 @@ export default function InvestorReadyPitch() {
         }`}
         onClick={handleNextSlide}
         disabled={currentSlide === slides.length - 1 || isAnimating}
-        aria-label="Next slide"
+        aria-label={texts.navigation.next}
       >
         <svg
           width="16"
@@ -799,7 +780,7 @@ export default function InvestorReadyPitch() {
           }`}
           onClick={() => goToSlide(index)}
           disabled={isAnimating}
-          aria-label={`Go to slide ${index + 1}`}
+          aria-label={texts.navigation.goToSlide.replace("{index}", index + 1)}
         />
       ))}
     </div>
@@ -819,12 +800,13 @@ export default function InvestorReadyPitch() {
     >
       <div className="text-center">
         <div className="w-16 h-16 rounded-full border-4 border-[#6B7554]/30 border-t-[#6B7554] animate-spin mb-4"></div>
-        <div className="text-xl font-bold text-[#6B7554]">REGEN COLLECTIVE</div>
+        <div className="text-xl font-bold text-[#6B7554]">
+          {texts.loading.header}
+        </div>
       </div>
     </div>
   );
 
-  // --------- Language Toggle Floating Button ----------
   const LanguageToggle = () => (
     <div className="fixed top-4 right-4 z-40">
       <div className="flex items-center space-x-1 bg-white/90 backdrop-blur-sm border border-[#6B7554]/20 rounded-full px-2 py-1 shadow-lg">
@@ -858,7 +840,7 @@ export default function InvestorReadyPitch() {
     >
       {/* Fixed UI elements */}
       <Logo />
-      <LanguageToggle /> {/* NEW */}
+      <LanguageToggle />
       <ProgressBar />
       <NavigationControls />
       <SlideNumber />
@@ -887,7 +869,7 @@ export default function InvestorReadyPitch() {
             >
               <div className="max-w-lg mx-auto md:mx-0">
                 <div className="mb-1 text-sm text-[#6B7554]/70 tracking-wider font-medium">
-                  REGEN COLLECTIVE
+                  {texts.header}
                   {slide.callout && (
                     <span className="ml-3 px-2 py-0.5 bg-[#6B7554] text-white text-xs rounded-md">
                       {slide.callout}
@@ -1038,7 +1020,7 @@ export default function InvestorReadyPitch() {
           </div>
         ))}
       </div>
-      <style jsx>{`
+      <style>{`
         @keyframes pulse-slow {
           0%,
           100% {
