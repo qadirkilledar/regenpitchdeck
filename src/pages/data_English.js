@@ -4,7 +4,7 @@ export const slides = [
     title: "REGEN COLLECTIVE",
     subtitle: "Democratizing a $12 Trillion Market",
     content: "Breaking down the barriers to commercial real-estate investment.",
-    callout: "SEED ROUND - $5M",
+    callout: "SEED ROUND - £5M",
     visual: "IntroVisual",
   },
   {
@@ -161,7 +161,7 @@ export const slides = [
     subtitle: "World-Class Expertise",
     team: [
       { name: "Miki Elson", title: "Founder & CEO", icon: "ME" },
-      { name: "Michael Hernandez", title: "CMO", icon: "MH" },
+      { name: "Michael Hernandez", title: "Co-Founder & BD", icon: "MH" },
       { name: "Qadir Killedar", title: "CTO", icon: "QK" },
       { name: "Caz Rue", title: "CFO", icon: "CR" },
     ],
@@ -184,10 +184,10 @@ export const slides = [
   {
     id: "investment",
     title: "THE INVESTMENT",
-    subtitle: "Pre-Seed Round - $5M",
+    subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Minimum Investment", value: "$150K" },
-      { label: "Valuation", value: "$5M" },
+      { label: "Minimum Investment", value: "£150K" },
+      { label: "Valuation", value: "£5M" },
       { label: "Structure", value: "3% pre-seed, 20% discount on next round" },
       {
         label: "Use of Funds",

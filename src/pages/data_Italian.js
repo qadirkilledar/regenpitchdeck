@@ -2,10 +2,10 @@ export const slides = [
   {
     id: "intro",
     title: "REGEN COLLECTIVE",
-    subtitle: "Democratizzando Un Mercato Da 12 Trilioni Di Dollari",
+    subtitle: "Democratizzando un mercato da 12 trilioni di dollari",
     content:
-      "Abbattendo Le Barriere Dell’Investimento Immobiliare Commerciale.",
-    callout: "PRE-SEED ROUND - $5M",
+      "Abbattendo Le Barriere dell’Investimento Immobiliare Commerciale.",
+    callout: "PRE-SEED ROUND - £5M",
     visual: "IntroVisual",
   },
   {
@@ -36,7 +36,7 @@ export const slides = [
       "Struttura REIT <strong>Decentralizzata</strong>",
       "Investimenti <strong>Frazionati</strong> In Proprietà Premium",
     ],
-    stat: "DEMOCRATIZZANDO L’ACCESSO AL 99,9%",
+    stat: "DEMOCRATIZZANDO L’ACCESSO AL 99.9%",
     visual: "SolutionVisual",
   },
   {
@@ -168,7 +168,7 @@ export const slides = [
     subtitle: "Competenze Di Classe Mondiale",
     team: [
       { name: "Miki Elson", title: "Founder & CEO", icon: "ME" },
-      { name: "Michael Hernandez", title: "CMO", icon: "MH" },
+      { name: "Michael Hernandez", title: "Co-Founder & BD", icon: "MH" },
       { name: "Qadir Killedar", title: "CTO", icon: "QK" },
       { name: "Caz Rue", title: "CFO", icon: "CR" },
     ],
@@ -191,10 +191,10 @@ export const slides = [
   {
     id: "investment",
     title: "L’INVESTIMENTO",
-    subtitle: "Pre-Seed Round - $5M",
+    subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Investimento Minimo", value: "$150K" },
-      { label: "Valutazione", value: "$5M" },
+      { label: "Investimento Minimo", value: "£150K" },
+      { label: "Valutazione", value: "£5M" },
       { label: "Struttura", value: "3% Pre-Seed, 20% Sconto Round Successivo" },
       {
         label: "Uso Dei Fondi",
@@ -204,8 +204,8 @@ export const slides = [
     ],
     projections: [
       { year: "Anno 1", revenue: "$1.75M", users: "100 Residenti" },
-      { year: "Anno 2", revenue: "$5M", users: "200 Residenti" },
-      { year: "Anno 3", revenue: "$15M", users: "600 Residenti" },
+      { year: "Anno 2", revenue: "$3.5M", users: "200 Residenti" },
+      { year: "Anno 3", revenue: "$10.5M", users: "600 Residenti" },
     ],
     note: "Proiezioni Basate Su Modello Fee 1-3%. Disponibilità Limitata. Term-Sheet Su Richiesta.",
     visual: "InvestmentVisual",
@@ -273,7 +273,7 @@ export const texts = {
     investorsLabel: "Investitori Potenziali",
     investorsValue: "400M+",
     volumeLabel: "Volume Annuale",
-    volumeValue: "$600B",
+    volumeValue: "$200B",
     footer: "Vantaggio Del Pioniere",
   },
   traction: {
@@ -296,7 +296,7 @@ export const texts = {
   roadmap: {
     header: "Traiettoria Di Crescita",
     phaseLabels: ["Fase 1", "Fase 2", "Fase 3"],
-    footer: "$500 Milioni In Beni Tokenizzati Al Q4 2026",
+    footer: "$50 Milioni In Beni Tokenizzati Al Q4 2026",
   },
   team: {
     header: "Team & Consulenti",
@@ -314,7 +314,7 @@ export const texts = {
   intro: {
     marketValue: "$12T",
     marketLabel: "Opportunità Di Mercato",
-    barrier: "$500K+ BARRIERA ODIER",
+    barrier: "$500K+ BARRIERA ODIERNA ",
     regen: "$100 CON REGEN",
   },
   cta: {

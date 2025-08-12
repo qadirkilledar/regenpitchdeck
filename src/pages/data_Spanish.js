@@ -5,7 +5,7 @@ export const slides = [
     subtitle: "Democratizando un Mercado de 12 Billones de Dólares",
     content:
       "Eliminando las barreras para invertir en bienes raíces comerciales.",
-    callout: "SEED ROUND - $5M",
+    callout: "SEED ROUND - £5M",
     visual: "IntroVisual",
   },
   {

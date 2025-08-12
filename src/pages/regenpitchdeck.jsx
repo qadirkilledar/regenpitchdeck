@@ -28,7 +28,7 @@ export default function InvestorReadyPitch() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [lang, setLang] = useState("EN"); // Default = English
+  const [lang, setLang] = useState("IT"); // Default = Italian
   const { slides, texts } = languageMap[lang]; // Dynamic slides and texts
   const slideRefs = useRef([]);
   const touchStartX = useRef(null);
@@ -666,9 +666,18 @@ export default function InvestorReadyPitch() {
           <div className="mb-4 px-4">
             <div className="text-sm text-[#6B7554]/70">{texts.cta.content}</div>
           </div>
-          <button className="px-8 py-3 bg-[#6B7554] text-white rounded-lg font-bold text-base shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A]">
+          <button
+            onClick={() =>
+              window.open(
+                "https://calendly.com/michael-regencollective/30min",
+                "_blank"
+              )
+            }
+            className="px-8 py-3 bg-[#6B7554] text-white rounded-lg font-bold text-base shadow-lg transform transition-all duration-300 hover:shadow-xl hover:bg-[#8A9B6A]"
+          >
             {texts.cta.button}
           </button>
+
           <div className="mt-4 text(Sm text-[#6B7554]">{texts.cta.email}</div>
         </div>
       </div>
