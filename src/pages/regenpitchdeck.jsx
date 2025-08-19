@@ -28,7 +28,7 @@ export default function InvestorReadyPitch() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [lang, setLang] = useState("IT"); // Default = Italian
+  const [lang, setLang] = useState("EN"); // Default = Italian
   const { slides, texts } = languageMap[lang]; // Dynamic slides and texts
   const slideRefs = useRef([]);
   const touchStartX = useRef(null);
