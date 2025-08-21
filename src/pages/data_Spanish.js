@@ -14,11 +14,11 @@ export const slides = [
     subtitle: "Los Inmuebles Premium Son Inaccesibles",
     content: "El mercado de bienes raíces comerciales hoy:",
     points: [
-      "Inversión mínima de $500.000+",
+      "Inversión mínima de $500,000+",
       "Períodos ilíquidos de 18-36 meses",
       "Acceso geográfico limitado",
       "Estructuras REIT complejas",
-      "Restringido al 0,1% más rico",
+      "Restringido al 0.1% más rico",
     ],
     stat: "12 BILLONES DE DÓLARES DE MERCADO BLOQUEADO",
     visual: "ProblemVisual",
@@ -35,7 +35,7 @@ export const slides = [
       "Estructura REIT <strong>descentralizada</strong>",
       "Inversiones <strong>fraccionadas</strong> en propiedades premium",
     ],
-    stat: "DEMOCRATIZANDO EL ACCESO PARA EL 99,9%",
+    stat: "DEMOCRATIZANDO EL ACCESO PARA EL 99.9%",
     visual: "SolutionVisual",
   },
   {
@@ -79,7 +79,7 @@ export const slides = [
   {
     id: "market",
     title: "LA OPORTUNIDAD",
-    subtitle: "Mercado Masivo e Inexplorado",
+    subtitle: "Mercado Masivo y Inexplorado",
     content: "Estamos entrando en un mercado enorme con tecnología disruptiva:",
     stats: [
       { label: "Mercado Global de Bienes Raíces", value: "$12T" },
@@ -120,10 +120,10 @@ export const slides = [
     subtitle: "Progreso Excepcional",
     content: "Lo que hemos logrado con capital mínimo:",
     achievements: [
-      "Desarrollo MVP de la plataforma (80% completado)",
+      "Desarrollo MVP de la plataforma (60% completado)",
       "Marco regulatorio en 47+ jurisdicciones",
       "Alianzas estratégicas con 3 desarrolladores inmobiliarios",
-      "Lista de espera de 15.000+ inversores potenciales",
+      "Lista de espera de 15,000+ inversores potenciales",
       "$200.000 ARR de actividades CoLiving y gestión de estudios creativos",
       "3 desarrollos inmobiliarios premium en Londres adquiridos off-market con GDV $100 millones",
     ],
@@ -136,24 +136,24 @@ export const slides = [
     stages: [
       {
         quarter: "Q4 2025",
-        title: "EXPANDIMOS",
+        title: "EXPANSIÓN",
         points: [
-          "5+ propiedades",
-          "Mercado secundario",
+          "Estructura Legal",
+          "100% MPV Completado",
           "Campaña de marketing",
         ],
       },
       {
         quarter: "Q1 2026",
-        title: "CRECEMOS",
-        points: ["10+ propiedades", "IA", "30.000+ inversores"],
+        title: "CRECIMENTO",
+        points: ["5+ propiedades", "IA", "15,000+ inversores"],
       },
       {
         quarter: "Q2 2026",
-        title: "DOMINAMOS",
+        title: "DOMINIO",
         points: [
-          "20+ propiedades premium",
-          "50.000 usuarios activos",
+          "10+ propiedades premium",
+          "20,000 usuarios activos",
           "Alianzas institucionales",
         ],
       },
@@ -166,7 +166,7 @@ export const slides = [
     subtitle: "Experiencia de Clase Mundial",
     team: [
       { name: "Miki Elson", title: "Founder & CEO", icon: "ME" },
-      { name: "Michael Hernandez", title: "CMO", icon: "MH" },
+      { name: "Michael Hernandez", title: "Co-Founder & BD", icon: "MH" },
       { name: "Qadir Killedar", title: "CTO", icon: "QK" },
       { name: "Caz Rue", title: "CFO", icon: "CR" },
     ],
@@ -189,10 +189,10 @@ export const slides = [
   {
     id: "investment",
     title: "LA INVERSIÓN",
-    subtitle: "Pre-Seed Round - $5M",
+    subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Inversión Mínima", value: "$150K" },
-      { label: "Valoración", value: "$5M" },
+      { label: "Inversión Mínima", value: "£150K" },
+      { label: "Valoración", value: "£5M" },
       {
         label: "Estructura",
         value: "3% pre-seed, 20% descuento próxima ronda",
@@ -205,8 +205,8 @@ export const slides = [
     ],
     projections: [
       { year: "Año 1", revenue: "$1.75M", users: "100 inquilinos" },
-      { year: "Año 2", revenue: "$5M", users: "200 inquilinos" },
-      { year: "Año 3", revenue: "$15M", users: "600 inquilinos" },
+      { year: "Año 2", revenue: "$3.5M", users: "200 inquilinos" },
+      { year: "Año 3", revenue: "$10.5M", users: "600 inquilinos" },
     ],
     note: "Proyecciones basadas en modelo de comisión 1-3%. Asignación limitada disponible. Term-sheet bajo petición.",
     visual: "InvestmentVisual",
@@ -248,10 +248,10 @@ export const texts = {
   problem: {
     header: "BIENES RAÍCES TRADICIONALES",
     marketAccess: "Acceso al Mercado",
-    access: "0,1% con acceso",
-    excluded: "99,9% excluido",
+    access: "0.1% con acceso",
+    excluded: "99.9% excluido",
     minInvestmentLabel: "Inversión Mínima",
-    minInvestmentValue: "$500.000+",
+    minInvestmentValue: "$500,000+",
   },
   solution: {
     header: "REGEN COLLECTIVE",
@@ -280,7 +280,7 @@ export const texts = {
   traction: {
     header: "Logros Alcanzados",
     achievements: [
-      { title: "Desarrollo de Plataforma", desc: "MVP 80% completado" },
+      { title: "Desarrollo de Plataforma", desc: "MVP 60% completado" },
       { title: "Marco Regulatorio", desc: "47+ jurisdicciones" },
       {
         title: "Asociaciones Inmobiliarias",
@@ -300,13 +300,13 @@ export const texts = {
   roadmap: {
     header: "Trayectoria de Crecimiento",
     phaseLabels: ["Fase 1", "Fase 2", "Fase 3"],
-    footer: "$500M en Activos Tokenizados para Q4 2026",
+    footer: "$50M en Activos Tokenizados para Q4 2026",
   },
   team: {
     header: "Equipo & Asesores",
     coreTeam: "Equipo Principal",
     advisors: "Asesores & Inversores",
-    experience: "85+ Años de Experiencia Relevante Combinada",
+    experience: "90+ Años de Experiencia Relevante Combinada",
     backing: "Líderes de la Industria Apoyan Nuestra Visión",
   },
   investment: {

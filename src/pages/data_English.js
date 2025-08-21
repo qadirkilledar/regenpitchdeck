@@ -136,19 +136,23 @@ export const slides = [
       {
         quarter: "Q4 2025",
         title: "EXPAND",
-        points: ["5+ properties", "Secondary market", "Marketing campaign"],
+        points: [
+          "Legal Structure",
+          "100% MPV Completion",
+          "Marketing campaign",
+        ],
       },
       {
         quarter: "Q1 2026",
         title: "GROW",
-        points: ["10+ properties", "AI", "30,000+ investors"],
+        points: ["5+ properties", "AI", "15,000+ investors"],
       },
       {
         quarter: "Q2 2026",
         title: "DOMINATE",
         points: [
-          "20+ premium properties",
-          "50,000 active users",
+          "10+ premium properties",
+          "20,000 active users",
           "Institutional partnerships",
         ],
       },
@@ -197,8 +201,8 @@ export const slides = [
     ],
     projections: [
       { year: "Year 1", revenue: "$1.75M", users: "100 tenants" },
-      { year: "Year 2", revenue: "$5M", users: "200 tenants" },
-      { year: "Year 3", revenue: "$15M", users: "600 tenants" },
+      { year: "Year 2", revenue: "$3.5M", users: "200 tenants" },
+      { year: "Year 3", revenue: "$10.5M", users: "600 tenants" },
     ],
     note: "Revenue projections based on 1-3% fee model across onboarded properties. Limited allocation available. Term-sheet available on request.",
     visual: "InvestmentVisual",
@@ -286,13 +290,13 @@ export const texts = {
   roadmap: {
     header: "Growth Trajectory",
     phaseLabels: ["Phase 1", "Phase 2", "Phase 3"],
-    footer: "$500M in Tokenized Assets by Q4 2026",
+    footer: "$50M in Tokenized Assets by Q4 2026",
   },
   team: {
     header: "Team & Advisors",
     coreTeam: "Core Team",
     advisors: "Advisors & Investors",
-    experience: "85+ Years Combined Relevant Experience",
+    experience: "90+ Years Combined Relevant Experience",
     backing: "Industry Leaders Backing Our Vision",
   },
   investment: {
@@ -314,6 +318,6 @@ export const texts = {
     content:
       "Be part of the platform that unlocks the $12 trillion commercial property market.",
     button: "INVEST NOW",
-    email: "michael@regencollective.xyz",
+    email: "miki@regencollective.xyz",
   },
 };
