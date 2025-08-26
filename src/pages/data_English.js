@@ -120,7 +120,6 @@ export const slides = [
     content: "What we have achieved with minimal capital:",
     achievements: [
       "MVP platform development (80% complete)",
-      "Regulatory framework across 47+ jurisdictions",
       "Strategic partnerships with 3 property developers",
       "Waitlist of 15,000+ potential investors",
       "$200,000 ARR from existing CoLiving and creative-studio management companies",
@@ -190,9 +189,8 @@ export const slides = [
     title: "THE INVESTMENT",
     subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Minimum Investment", value: "£150K" },
+      { label: "Equity", value: "3% pre-seed, 20% discount on next round" },
       { label: "Valuation", value: "£5M" },
-      { label: "Structure", value: "3% pre-seed, 20% discount on next round" },
       {
         label: "Use of Funds",
         value:
@@ -277,7 +275,6 @@ export const texts = {
     header: "Milestones Achieved",
     achievements: [
       { title: "Platform Development", desc: "MVP 80% complete" },
-      { title: "Regulatory Framework", desc: "47+ jurisdictions" },
       { title: "Property Partnerships", desc: "3 major developers" },
       { title: "Investor Waitlist", desc: "15,000+ potential investors" },
       {
