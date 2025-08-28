@@ -189,6 +189,7 @@ export const slides = [
     title: "THE INVESTMENT",
     subtitle: "Pre-Seed Round - £5M",
     terms: [
+      { label: "Investment", value: "£150K" },
       { label: "Equity", value: "3% pre-seed, 20% discount on next round" },
       { label: "Valuation", value: "£5M" },
       {
