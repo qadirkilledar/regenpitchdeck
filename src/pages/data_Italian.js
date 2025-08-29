@@ -123,7 +123,6 @@ export const slides = [
     content: "Cosa Abbiamo Raggiunto Con Capitale Minimo:",
     achievements: [
       "Sviluppo MVP Piattaforma (60% Completato)",
-      "Quadro Normativo In 47+ Giurisdizioni",
       "Partnership Strategiche Con 3 Sviluppatori Immobiliari",
       "Lista D’Attesa Di Oltre 15,000 Potenziali Investitori",
       "£200.000 ARR Dalle Attività Di Co-Living E Gestione Studi Creativi",
@@ -193,9 +192,9 @@ export const slides = [
     title: "L’INVESTIMENTO",
     subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Investimento Minimo", value: "£150K" },
-      { label: "Valutazione", value: "£5M" },
+      { label: "Investimento", value: "£150K" },
       { label: "Struttura", value: "3% Pre-Seed, 20% Sconto Round Successivo" },
+      { label: "Valutazione", value: "£5M" },
       {
         label: "Uso Dei Fondi",
         value:
@@ -280,7 +279,6 @@ export const texts = {
     header: "Traguardi Raggiunti",
     achievements: [
       { title: "Sviluppo Della Piattaforma", desc: "MVP Completato Al 60%" },
-      { title: "Quadro Normativo", desc: "Oltre 47+ Giurisdizioni" },
       { title: "Partnership Immobiliari", desc: "3 Sviluppatori Principali" },
       {
         title: "Lista D’Attesa Investitori",

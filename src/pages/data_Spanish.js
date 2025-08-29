@@ -121,7 +121,6 @@ export const slides = [
     content: "Lo que hemos logrado con capital mínimo:",
     achievements: [
       "Desarrollo MVP de la plataforma (60% completado)",
-      "Marco regulatorio en 47+ jurisdicciones",
       "Alianzas estratégicas con 3 desarrolladores inmobiliarios",
       "Lista de espera de 15,000+ inversores potenciales",
       "$200.000 ARR de actividades CoLiving y gestión de estudios creativos",
@@ -191,12 +190,12 @@ export const slides = [
     title: "LA INVERSIÓN",
     subtitle: "Pre-Seed Round - £5M",
     terms: [
-      { label: "Inversión Mínima", value: "£150K" },
-      { label: "Valoración", value: "£5M" },
+      { label: "Inversión ", value: "£150K" },
       {
         label: "Estructura",
         value: "3% pre-seed, 20% descuento próxima ronda",
       },
+      { label: "Valoración", value: "£5M" },
       {
         label: "Uso de Fondos",
         value:
@@ -281,7 +280,6 @@ export const texts = {
     header: "Logros Alcanzados",
     achievements: [
       { title: "Desarrollo de Plataforma", desc: "MVP 60% completado" },
-      { title: "Marco Regulatorio", desc: "47+ jurisdicciones" },
       {
         title: "Asociaciones Inmobiliarias",
         desc: "3 desarrolladores principales",
